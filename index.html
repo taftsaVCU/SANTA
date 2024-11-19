@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seth's Advising Note-Taking Application</title>
+	
+    <link rel="stylesheet" href="styles.css">
+	
+	<script src="links.js"></script>
+    <script src="script.js"></script>
+	<script src="comments.js"></script>	
+</head>
+<body>
+    <div class="container">
+        <div class="left" id="left">
+			<h4>First Meeting</h4>
+            <div id="first"></div>
+			<h4>Routines</h4>
+            <div id="routines"></div>
+			<h4>Actions</h4>
+            <div id="actions"></div>
+			<h4>Resources</h4>
+			<div id="resources"></div>
+			<h4>Policies</h4>
+			<div id="policies"></div>
+			<h4>Instructions</h4>
+			<div id="instructions"></div>
+			<h4>Engineering</h4>
+			<div id="engineering"></div>
+        </div>
+        <div class="right" id="right">
+			<p>Here is a summary of your appointment. Please let me know if you have any additional questions or concerns!</p>
+			
+			<span id="action">
+				<p class="header"><u>You need to...</u></p>
+			</span>
+			
+			<span id="summary">
+				<p class="header"><u>We talked about...</u></p>
+			</span>
+			
+            <span id="howTo">
+				<p class="header"><u>How to...</u></p>
+			</span>
+        </div>
+    </div>
+	<button id="copyButton" onclick="copyText()">Copy Note</button>
+	<div id="toast" class="toast">Text copied to clipboard!</div>
+</body>
+</html>

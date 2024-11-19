@@ -1,0 +1,42 @@
+var link = {
+	historicalRepeatForm: "https://docs.google.com/forms/d/e/1FAIpQLSd4QJN0osPbYRnGpxNs4kF30crFqyNNyrZv7sCyvGOHSBoZrQ/viewform",
+	repeatedCoursePolicy: "https://bulletin.vcu.edu/academic-regs/ugrad/repeated-courses/",
+	passFail: "https://registrar.vcu.edu/registration/registration-guide/pass-fail-grade-option/",
+	addDropWithdraw: "https://registrar.vcu.edu/registration/registration-guide/add-drop-or-withdraw/",
+	dropWithdrawSFS: "https://sfs.vcu.edu/billing-and-payments/refunds/drops-and-withdrawals/",
+	academicStanding: "https://bulletin.vcu.edu/academic-regs/ugrad/continuance/",
+	sap: "https://sfs.vcu.edu/financial-aid/keeping-your-aid/satisfactory-academic-progress/",
+	arac: "https://bulletin.vcu.edu/academic-regs/ugrad/arac/",
+	uaaAracForm: "https://uaa.vcu.edu/services/academic-policy-appeals/",
+	mloa: "https://dos.vcu.edu/services/medical-leave-of-absence/",
+	readmission: "https://bulletin.vcu.edu/undergraduate/undergraduate-study/admission-university/readmission-guidelines/",
+	courseEvaluation: "https://www.pubapps.vcu.edu/courseeval/",
+	eServices: "https://go.vcu.edu/eservices",
+	genEds: "https://bulletin.vcu.edu/undergraduate/undergraduate-study/general-education-curriculum/",
+	engineeringPolicies: "https://bulletin.vcu.edu/undergraduate/engineering/undergraduate-information/",
+	registrationDates: "https://registrar.vcu.edu/registration/registration-guide/registration-dates/",
+	registrationInstructions: "https://registrar.vcu.edu/registration/registration-guide/",
+	additionalCredit: "https://bulletin.vcu.edu/undergraduate/undergraduate-study/admission-university/additional-sources-of-credit/",
+	transferEquivalents: "https://transfer.vcu.edu/transferring-credits/transfer-course-equivalents/",
+	changeMajor: "https://docs.google.com/a/vcu.edu/forms/d/e/1FAIpQLScwHVA7WToKtPDdLwnIyODKpQuyO9gZo1gCg1MtVgMKi6ZcEQ/viewform",
+	changeMinor: "https://docs.google.com/a/vcu.edu/forms/d/e/1FAIpQLSdflGo9cbNm5Htn2JxGNS4wbUq5fAqt7zTCbop0H45h10NupQ/viewform",
+	fiOverride: "https://docs.google.com/forms/d/e/1FAIpQLSePKFB7XjW9etDaOUBeEhpQEHdomQOEmq9KC97L3vsF2XEitg/viewform",
+	enrollmentCancellation: "https://docs.google.com/forms/d/e/1FAIpQLSdcXxq5D5a97H6bwSwhLEC1OsYUrUAiqriXkvkVPVdG-XoI7A/viewform",
+	waitlistInstructions: "https://registrar.vcu.edu/registration/registration-guide/waitlists/",
+	takeCoursesElsewhere: 'https://transfer.vcu.edu/for-admitted-students/taking-courses-outside-vcu/',
+	takeCoursesElsewhereForm: "https://docs.google.com/forms/d/e/1FAIpQLSfeMDvts-gkMesw91dbNBRsjyt1O3iiUh1vLw26-rhBPfTnkw/viewform",
+	requestForAssistance: "https://cm.maxient.com/reportingform.php?VirginiaCommonwealthUniv&layout_id=6",
+	miniterm: "https://registrar.vcu.edu/academic-schedules/schedule-of-classes/",
+	jTerm: "https://winter.vcu.edu/courses/j-term/",
+	intersession: "https://winter.vcu.edu/",
+	summer: "https://summer.vcu.edu/summer-courses/",
+
+	engOverride: "https://egr.vcu.edu/current-students/student-services/undergraduate/#OverrideForms",
+	mathAleks: "https://math.vcu.edu/programs/undergraduate/courses/math-placement/score-interpretation/prep-and-learning-modules/",
+	chemAleks: "https://chemistry.vcu.edu/undergraduate/placement-test-and-aleks/",
+	businessMajorChange: "https://docs.google.com/a/vcu.edu/forms/d/e/1FAIpQLSeIB9Ra9uM7ovgGnRDHNBXBsBdA6xbWNNIO6hIrJVNDBcrQlA/viewform",
+}
+
+function linkIt(link, text) {
+	return "<a href='" + link + "' target='_blank'>" + text + "</a>";
+};
