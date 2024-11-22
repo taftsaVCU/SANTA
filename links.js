@@ -19,8 +19,11 @@ var link = {
 	additionalCredit: "https://bulletin.vcu.edu/undergraduate/undergraduate-study/admission-university/additional-sources-of-credit/",
 	transferEquivalents: "https://transfer.vcu.edu/transferring-credits/transfer-course-equivalents/",
 	changeMajor: "https://docs.google.com/a/vcu.edu/forms/d/e/1FAIpQLScwHVA7WToKtPDdLwnIyODKpQuyO9gZo1gCg1MtVgMKi6ZcEQ/viewform",
+	changeMajorRequirements: "https://academicadvising.vcu.edu/change-your-major/",
 	changeMinor: "https://docs.google.com/a/vcu.edu/forms/d/e/1FAIpQLSdflGo9cbNm5Htn2JxGNS4wbUq5fAqt7zTCbop0H45h10NupQ/viewform",
-	fiOverride: "https://docs.google.com/forms/d/e/1FAIpQLSePKFB7XjW9etDaOUBeEhpQEHdomQOEmq9KC97L3vsF2XEitg/viewform",
+	fiOverride: "https://fi.vcu.edu/resources-for-students/overrides-/",
+	//fiOverrideForm: "https://docs.google.com/forms/d/e/1FAIpQLSePKFB7XjW9etDaOUBeEhpQEHdomQOEmq9KC97L3vsF2XEitg/viewform",
+	override: "https://academicadvising.vcu.edu/forms/course-overrides/",
 	enrollmentCancellation: "https://docs.google.com/forms/d/e/1FAIpQLSdcXxq5D5a97H6bwSwhLEC1OsYUrUAiqriXkvkVPVdG-XoI7A/viewform",
 	waitlistInstructions: "https://registrar.vcu.edu/registration/registration-guide/waitlists/",
 	takeCoursesElsewhere: 'https://transfer.vcu.edu/for-admitted-students/taking-courses-outside-vcu/',
@@ -33,8 +36,13 @@ var link = {
 
 	engOverride: "https://egr.vcu.edu/current-students/student-services/undergraduate/#OverrideForms",
 	mathAleks: "https://math.vcu.edu/programs/undergraduate/courses/math-placement/score-interpretation/prep-and-learning-modules/",
+	mathAleksReport: "https://docs.google.com/forms/d/e/1FAIpQLSfJZ3ZLwSKBs3xx4UZLOC0CWjcfP3VuEQPjw0758dBtjF65Mw/viewform",
 	chemAleks: "https://chemistry.vcu.edu/undergraduate/placement-test-and-aleks/",
 	businessMajorChange: "https://docs.google.com/a/vcu.edu/forms/d/e/1FAIpQLSeIB9Ra9uM7ovgGnRDHNBXBsBdA6xbWNNIO6hIrJVNDBcrQlA/viewform",
+	preMed: "https://bulletin.vcu.edu/undergraduate/college-humanities-sciences/prehealth-minors/pre-medicine/",
+	physOverride: "https://docs.google.com/forms/d/e/1FAIpQLScjsYVNN-SSIUcAIuGXs2J0CQ_uwLppBPmqdCvzQU7kDaSjlQ/viewform",
+	mathOverride: "https://math.vcu.edu/programs/undergraduate/courses/overrides/",
+	chemOverride: "https://chemistry.vcu.edu/current-students/undergraduate/overrides/",
 }
 
 function linkIt(link, text) {

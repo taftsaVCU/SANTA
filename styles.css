@@ -17,6 +17,20 @@ body {
     background-color: #fff;
 }
 
+#info {
+	position: fixed;
+	bottom: 2px;
+	right: 2px;
+}
+
+.g {
+	color: green;
+}
+
+.smol {
+	font-size: 0.6em;
+}
+
 .left, .right {
     padding: 20px;
     box-sizing: border-box;

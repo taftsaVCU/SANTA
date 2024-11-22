@@ -1,7 +1,10 @@
-function Button(type, symbol, label, color, canFade, critical, summary, action, how, extraInfo) {
+function Button(type, symbol, shortName, longName, color, canFade, critical, summary, action, how, extraInfo) {
 	this.type = type;
 	this.symbol = symbol;
-	this.label = label;
+	this.name = {
+		short: shortName,
+		long: longName,
+	};
 	this.color = color;
 	this.canFade = canFade;	
 	this.critical = critical; //throws alert if not clicked on copy
@@ -30,6 +33,11 @@ var pronunciation = new FirstMeeting(
 	"You told me your name is pronounced <input type='text'>."
 );
 
+var background = new FirstMeeting(
+	'🛤️ Background',
+	"We talked about your background. You told me <input type='text'>."
+);
+
 //Routines
 function Routine(name, text) {
 	this.name = name;
@@ -40,7 +48,7 @@ function Routine(name, text) {
 
 var discussSemester = new Routine(
 	'🏫 Current Semester',
-	'We discussed the current semester, which is going <input type="text">'
+	'We discussed the current semester, which you said is <input type="text">'
 );
 
 var studentQuestions = new Routine(
@@ -94,7 +102,9 @@ var changeMajor = new Action(
 	'🔄 Major/Concentration Change',
 	'We discussed the possibility of a '
 	+ linkIt(link.changeMajor, "change of major/concentration")
-	+ ". <input type='text'>"
+	+ ". Some programs have "
+	+ linkIt(link.changeMajorRequirements, "requirements")
+	+ " to change into. <input type='text'>"
 );
 
 var changeMinor = new Action(
@@ -105,10 +115,17 @@ var changeMinor = new Action(
 );
 
 var fiOverride = new Action(
-	'🔧 FI Override',
-	'Fill out '
-	+ linkIt(link.fiOverride, 'this form')
-	+ ' to request an override for Focused Inquiry classes.'
+	'🔎 FI Override',
+	'You can find information about Focused Inquiry overrides—including the link to the appropriate form—'
+	+ linkIt(link.fiOverride, 'here')
+	+ '.'
+);
+
+var override = new Action(
+	'🔧 Override',
+	'You need an override for <input type="text">. You can find information and forms for overrides by program on '
+	+ linkIt(link.override, 'this page')
+	+ '.'
 );
 
 var enrollmentCancellation = new Action(
@@ -139,7 +156,7 @@ var nonSpringFall = new Action(
 	+ linkIt(link.jTerm, 'J-term')
 	+ ', and '
 	+ linkIt(link.miniterm, 'miniterm')
-	+ ' sessions. This might be an option for you for <input type="text">.'
+	+ ' sessions. This might be an option for you for <input type="text">. Please note that taking Summer classes may cost more than increasing Fall/Spring courseloads.'
 );
 
 
@@ -365,9 +382,10 @@ var sep = new Instruction(
 
 var genEds = new Instruction(
 	'🏫 Gen Ed Options',
-	'There are several ways to see which courses will fulfill Gen Ed requirements. The '
+	'There are several ways to see which courses will fulfill ConnectED requirements. The '
 	+ linkIt(link.genEds, 'bulletin')
-	+ '	contains a full description of requirement, including course options. You can also check requirements in DegreeWorks; on the <b>Audits</b> tab, scroll down to <b>ConnectED - General Education</b>.',
+	+ '	contains a full description of requirements, including course options. You can also check requirements in DegreeWorks; on the <b>Audits</b> tab, scroll down to <b>ConnectED - General Education</b>.'
+	+ ' Finally, you can search directly for courses that fulfill specific ConnectED categories by using the <b>Advanced Search</b> option and selecting an <b>Attribute</b>.',
 	"",
 );
 
@@ -425,7 +443,9 @@ var mathAleks = new Engineering(
 	"➗ Math ALEKS",
 	"I recommend you make use of the "
 	+ linkIt(link.mathAleks, "ALEKS process for Math")
-	+ '. <input type="text">',
+	+ '. Students in the College of Engineering can increase their placement by 2 levels (other students can only raise it by 1). After raising your placement score, you need to report it using '
+	+ linkIt(link.mathAleksReport, "this form.")
+	+ ' <input type="text">',
 	"",
 )
 	
@@ -442,5 +462,53 @@ var businessMajorChange = new Engineering(
 	"If you are interested in changing your major to join the School of Business, you will need to attend a "
 	+ linkIt(link.businessMajorChange, "change of major session")
 	+ '.',
+	"",
+)
+	
+var preMed = new Engineering(
+	"💉 Pre-Med Info",
+	"You can find the requirements for the Pre-Med minor "
+	+ linkIt(link.preMed, "here")
+	+ ".",
+	"",
+)
+	
+var practicalAI = new Engineering(
+	"🤖 Practical AI Minor",
+	"If you need information about the Practical AI minor through the Interdisciplinary Studies program, you should contact Dr. Mariah Crilley at "
+	+ linkIt("mailto:mtcrilley@vcu.edu", "mtcrilley@vcu.edu")
+	+ ".",
+	"",	
+)
+	
+var physOverride = new Engineering(
+	"⚛️ PHYS Override",
+	"You may need an override for PHYS <input type='text'>. You can request one using "
+	+ linkIt(link.physOverride, "this form")
+	+ ".",
+	"",
+)
+
+var mathOverride = new Engineering(
+	"∑ MATH Override",
+	"You may need an override for MATH <input type='text'>. You can request one using the form linked on "
+	+ linkIt(link.mathOverride, "this page")
+	+ ".",
+	"",
+)
+	
+var chemOverride = new Engineering(
+	"🧪 CHEM Override",
+	"You may need an override for CHEM <input type='text'>. You can request one using the form linked on "
+	+ linkIt(link.chemOverride, "this page")
+	+ ".",
+	"",
+)
+	
+var chemOverride = new Engineering(
+	"💺 CHEM Seats",
+	"The Chemistry department rolls out more seats over time for their classes. Make sure you are "
+	+ linkIt(link.waitlistInstructions, "waitlisted")
+	+ " for a section that fits your schedule if possible. Otherwise, check once every few days for open seats. In January, start checking daily.",
 	"",
 )
