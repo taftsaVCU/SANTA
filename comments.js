@@ -210,21 +210,15 @@ var counseling = new Resource(
 )
 
 var advocacy = new Resource(
-	"✊ Office of Student Advocacy",
-	"",
-	"https://advocacy.vcu.edu/"
+	"✊ Dean of Student Advocacy OFfice",
+	"The Dean of Students' office and the Office of Student Advocacy can help with a wide variety of personal needs. If you need assistance, you can complete " + linkIt(link.requestForAssistance, 'this form') + ', which will be routed to the appropriate office for your need. If your need can\'t be addressed by either office, they will refer you to the appropriate resource.',
+	"https://dos.vcu.edu/"
 )
 
 var learning = new Resource(
 	"📖 Learning Center",
 	"Campus Learning Center (SI/Tutoring/Coaching)",
 	"https://clc.vcu.edu/"
-)
-	
-var dos = new Resource(
-	"🎓 Dean of Students",
-	"If you need assistance, you can complete " + linkIt(link.requestForAssistance, 'this form') + '.',
-	"https://dos.vcu.edu/"
 )
 	
 var global = new Resource(
@@ -404,7 +398,7 @@ var courseScheduler = new Instruction(
 	+ " Select the appropriate semester and make sure only the correct campus(es) is(/are) selected. Add your courses; if desired, add breaks for times during which you would prefer not to have class."
 	+ " After entering this information, click <b>Generate Schedules</b> at the bottom of the page. Once you select a schedule, you can click <b>Send to Shopping Cart</b> to prepare these"
 	+ " courses for registration in eServices. <i>Note: Doing this will <b>not</b> reserve your spot. If sections saved in your cart become unavailable, you will need to select alternative options."
-	+ "Check your cart the night before your registration window opens</i>.",
+	+ " Check your cart the night before your registration window opens</i>.",
 	"",
 );
 
@@ -424,7 +418,7 @@ function Engineering(name, text, notes) {
 }
 
 var engrOverride = new Engineering(
-	"🔧 Override",
+	"🔧 Engineering Override",
 	"You need to complete the "
 	+ linkIt(link.engOverride, "override form")
 	+ " for the appropriate Engineering program. <input type='text'>",
@@ -505,7 +499,7 @@ var chemOverride = new Engineering(
 	"",
 )
 	
-var chemOverride = new Engineering(
+var chemSeats = new Engineering(
 	"💺 CHEM Seats",
 	"The Chemistry department rolls out more seats over time for their classes. Make sure you are "
 	+ linkIt(link.waitlistInstructions, "waitlisted")
