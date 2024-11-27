@@ -9,7 +9,13 @@
 	
 	<script src="links.js"></script>
     <script src="script.js"></script>
-	<script src="comments.js"></script>	
+	<script src="comments.js"></script>
+	
+	
+	<!-- Roboto Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -17,36 +23,36 @@
 			<h4>First Meeting</h4>
             <div id="first"></div>
 			<h4>Routines</h4>
-            <div id="routines"></div>
+            <div id="routine"></div>
 			<h4>Instructions</h4>
-			<div id="instructions"></div>
+			<div id="instruction"></div>
 			<h4>Actions</h4>
-            <div id="actions"></div>
+            <div id="action"></div>
 			<h4>Resources</h4>
-			<div id="resources"></div>
+			<div id="resource"></div>
 			<h4>Policies</h4>
-			<div id="policies"></div>			
+			<div id="policy"></div>			
 			<h4>Engineering</h4>
 			<div id="engineering"></div>
         </div>
         <div class="right" id="right">
-			<p>It was a pleasure meeting with you today! Here is a summary of your appointment. Please let me know if you have any additional questions or concerns.</p>
-			<br />
-			<span id="action">
-				<p class="header"><u>You need to...</u></p>
-			</span>
-			<br />
-			<span id="summary">
-				<p class="header"><u>We talked about...</u></p>
-			</span>
-			<br />
-            <span id="howTo">
-				<p class="header"><u>How to...</u></p>
-			</span>
-        </div>
+			<div id="noteOutput">
+				<p>It was a pleasure meeting with you today! Here is a summary of your appointment. Please let me know if you have any additional questions or concerns.</p>
+				<span>
+					<p class="header"><u>You need to...</u></p>
+					<ul id='todo'></ul>
+				</span>
+				<span id="summary">
+					<p class="header"><u>We talked about...</u></p>
+				</span>
+	            <span id="howTo">
+					<p class="header"><u>How to...</u></p>
+				</span>
+			</div>
+			<button id="copyButton" onclick="copyText()">Copy Note</button>	
+        </div>			
     </div>
-	<button id="copyButton" onclick="copyText()">Copy Note</button>
 	<div id="toast" class="toast">Text copied to clipboard!</div>
-	<div id="info"><span class="g">S</span>eth's <span class="g">A</span>dvising <span class="g">N</span>ote-<span class="g">T</span>aking <span class="g">A</span>pp <span class="smol">Version 1.1</span></div>
+	<div id="info"><span class="g">S</span>eth's <span class="g">A</span>dvising <span class="g">N</span>ote-<span class="g">T</span>aking <span class="g">A</span>pp <span class="smol">Version 2.0</span></div>
 </body>
 </html>

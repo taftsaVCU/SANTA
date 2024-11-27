@@ -1,7 +1,15 @@
 function addText(html, where) {
-	if (html !="") {
+	if (html != null) {
 		const rightDiv = document.getElementById('right');
-	    const newText = document.createElement('p');
+		var newText;
+		
+		//Prep type of element to be added based on location
+		if (where == 'action') {
+			newText = document.createElement('li');
+		} else {
+			newText = document.createElement('p');
+		};
+		
 	    newText.innerHTML = html;
 	    newText.className = 'text-entry';
 	
@@ -15,17 +23,24 @@ function addText(html, where) {
 	        }
 	    });
 	
-	    // Append the new text entry to the right div
-		const howToSpan = document.getElementById('howTo');
-		const summarySpan = document.getElementById('summary');
-	    
+	    // Append the new text entry to the right div    
 		switch (where) {
-	        case 'how to':
-				howToSpan.appendChild(newText);
+	        case 'howTo':
+				document.getElementById('howTo').appendChild(newText);
+	            break;
+			case 'summary':
+				document.getElementById('summary').appendChild(newText);
+	            break;
+			case 'howTo':
+				document.getElementById('howTo').appendChild(newText);
+	            break;
+			case 'action':
+				
+				document.getElementById('todo').appendChild(newText);
 	            break;
 
 			default:
-				summarySpan.appendChild(newText);
+				document.getElementById('summary').appendChild(newText);
 	    }
 	};
 }
@@ -40,7 +55,7 @@ function showToast(message) {
 }
 
 function copyText() {
-    const rightDiv = document.getElementById('right');
+    const rightDiv = document.getElementById('noteOutput');
     const inputs = Array.from(rightDiv.getElementsByTagName('input'));
     const spans = [];
 
@@ -50,7 +65,7 @@ function copyText() {
         span.textContent = input.value;
         input.parentNode.replaceChild(span, input);
         spans.push(span);
-        console.log("handled " + span.textContent);
+        console.log('handled ' + span.textContent);
     });
 
     // Copy the content
@@ -79,70 +94,33 @@ function copyText() {
 }
 
 
-function createButton(text, onClickFunction) {
+function createButton(symbol, label, onClickFunction) {
     const button = document.createElement('button');
-    button.textContent = text;
+    button.innerHTML = '<table class="buttonLabel"><tr><td class="symbol">' + symbol + '</td><td class="label">' + label + '</td></tr></table>';
     button.onclick = onClickFunction;
     return button;
 }
 
 function initializeButtons() {
     const leftDiv = document.getElementById('left');
-	const routinesDiv = document.getElementById('routines');
-	const actionsDiv = document.getElementById('actions');
-	const resourcesDiv = document.getElementById('resources');
-	const policiesDiv = document.getElementById('policies');
-	const instructionsDiv = document.getElementById('instructions');
-	const engineeringDiv = document.getElementById('engineering');
-	const firstDiv = document.getElementById('first');
 
-    // Automatically gather all routines, resources, and policies
+    // Automatically gather all buttons
     for (let key in window) {
 	    let item = window[key];
 	    let button;
 	
 	    switch (true) {
-	        case item instanceof FirstMeeting:
-	            button = createButton(item.name, function() {
-	                addText(item.text);
+			case item instanceof Button:
+				button = createButton(item.symbol, item.label, function() {
+	                addText(item.output.summary, 'summary');
+					addText(item.output.action, 'action');
+					addText(item.output.howTo, 'howTo');
 	            });
-	            firstDiv.appendChild(button);
-	            break;
-			case item instanceof Instruction:
-	            button = createButton(item.name, function() {
-	                addText(item.text, 'how to');
-	            });
-	            instructionsDiv.appendChild(button);
-	            break;
-			case item instanceof Action:
-	            button = createButton(item.name, function() {
-	                addText(item.text);
-	            });
-	            actionsDiv.appendChild(button);
-	            break;
-	        case item instanceof Routine:
-	            button = createButton(item.name, function() {
-	                addText(item.text);
-	            });
-	            routinesDiv.appendChild(button);
-	            break;
-	        case item instanceof Resource:
-	            button = createButton(item.name, function() {
-	                addText(referTo(item));
-	            });
-	            resourcesDiv.appendChild(button);
-	            break;
-	        case item instanceof Policy:
-	            button = createButton(item.buttonName, function() {
-	                addText(discussPolicy(item));
-	            });
-	            policiesDiv.appendChild(button);
-	            break;
-			case item instanceof Engineering:
-	            button = createButton(item.name, function() {
-	                addText(item.text);
-	            });
-	            engineeringDiv.appendChild(button);
+				
+				//Prevent fade
+				if (!item.canFade) {button.classList.add('persistent');};
+				
+				document.getElementById(item.type).appendChild(button);
 	            break;
 	    }
 	}

@@ -1,17 +1,41 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #DEDEDE;
+}
+
+* {
+	font-family: "Roboto", sans-serif;
+	/* border: 1px dashed blue; */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .container {
     display: flex;
-    width: 95%;
+    width: 99%;
     height: 95%;
     border: 1px solid #ccc;
     background-color: #fff;
@@ -43,8 +67,41 @@ body {
 }
 
 .right {
+	position: relative;
+	overflow: hidden;
+}
+
+#noteOutput {
+	overflow-y: auto;
+	height: 95%;
+}
+
+#copyButton {
+	position: absolute;
+    bottom: 0;
+	left: 0;
+	margin: 0;
+	height: 5%;
+	width: 100%;
+    background-color: #FFB300;
+    color: black;
+	font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+#copyButton:hover {
+    background-color: #0B652E;
+	color: white;
+}
+
+.right {
 	width: 45%;
     overflow-y: auto;
+}
+
+h4 {
+	margin-bottom: 5px;
 }
 
 button {
@@ -56,38 +113,67 @@ button {
 }
 
 button:not(#copyButton) {
-	height: 50px;
+	height: 42px;
 	vertical-align: top;
 	font-size: 0.7em;
+	border: none;
+	font-weight: bold;
+	border-radius: 10px;
+	padding: 0;
+	
+	color: white;
+	
+	background-image: linear-gradient(left , #FFB300 30%, #000000 31%);
+	background-image: -o-linear-gradient(left , #FFB300 30%, #000000 31%);
+	background-image: -moz-linear-gradient(left , #FFB300 30%, #000000 31%);
+	background-image: -webkit-linear-gradient(left , #FFB300 30%, #000000 31%);
+	background-image: -ms-linear-gradient(left , #FFB300 30%, #000000 31%);
+
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    right bottom,
+	    color-stop(0.3, #FFB300),
+	    color-stop(0.31, #000000)
+	);
 }
 
-button.clicked {
+button:not(#copyButton):hover {
+	background-image: linear-gradient(left , #FFB300 30%, #303030 31%);
+	background-image: -o-linear-gradient(left , #FFB300 30%, #303030 31%);
+	background-image: -moz-linear-gradient(left , #FFB300 30%, #303030 31%);
+	background-image: -webkit-linear-gradient(left , #FFB300 30%, #303030 31%);
+	background-image: -ms-linear-gradient(left , #FFB300 30%, #303030 31%);
+
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    right bottom,
+	    color-stop(0.3, #FFB300),
+	    color-stop(0.31, #303030)
+	);
+}
+
+.buttonLabel {
+	width: 100%;
+}
+
+.symbol {
+	font-size: 2.4em;
+	width: 30%;
+}
+
+.label {
+	width: 70%;
+}
+
+button.clicked:not(.persistent) {
 	opacity: 20%;
 }
 
-p:not(.header):hover {
+p:not(.header):hover, li:hover {
     cursor: pointer;
     background-color: mistyrose;
-}
-
-#copyButton {
-    position: fixed;
-    bottom: 5%;
-	right: 5%;
-	height: 100px;
-	width:100px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    width: auto; /* Ensure the button width is auto */
-    display: inline-block; /* Ensure the button does not stretch */
-}
-
-#copyButton:hover {
-    background-color: #0056b3;
 }
 
 .toast {
@@ -140,6 +226,6 @@ input[type="text"] {
     font-size: 1em;
 }
 
-#additionalNotes {
+.additionalNotes {
 	width: 90%;
 }
