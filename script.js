@@ -4,7 +4,7 @@ function addText(html, where) {
 		var newText;
 		
 		//Prep type of element to be added based on location
-		if (where == 'action') {
+		if (where == 'task') {
 			newText = document.createElement('li');
 		} else {
 			newText = document.createElement('p');
@@ -22,26 +22,8 @@ function addText(html, where) {
 	            }
 	        }
 	    });
-	
-	    // Append the new text entry to the right div    
-		switch (where) {
-	        case 'howTo':
-				document.getElementById('howTo').appendChild(newText);
-	            break;
-			case 'summary':
-				document.getElementById('summary').appendChild(newText);
-	            break;
-			case 'howTo':
-				document.getElementById('howTo').appendChild(newText);
-	            break;
-			case 'action':
-				
-				document.getElementById('todo').appendChild(newText);
-	            break;
-
-			default:
-				document.getElementById('summary').appendChild(newText);
-	    }
+		
+		document.getElementById(where).appendChild(newText);
 	};
 }
 
@@ -58,7 +40,27 @@ function copyText() {
     const rightDiv = document.getElementById('noteOutput');
     const inputs = Array.from(rightDiv.getElementsByTagName('input'));
     const spans = [];
-
+	
+	//Handle Critical Buttons
+	var alertList = document.getElementsByClassName('critical');
+	var alertText = 'You haven\'t used the following "critical" buttons: ';
+	var showAlert = 0;
+	
+	for (var i = 0; i < alertList.length; i++) {
+		if (!alertList[i].classList.contains('clicked')) {
+			showAlert = 1;
+			if (alertText == 'You haven\'t used the following "critical" buttons: ') {
+				alertText += '[' + alertList[i].firstChild.firstChild.firstChild.lastChild.innerHTML + ']';
+			} else {
+				alertText += ', [' + alertList[i].firstChild.firstChild.firstChild.lastChild.innerHTML + ']';
+			};		
+		};
+	};
+	
+	if (showAlert) {
+		alert(alertText);
+	}
+	
     // Replace input fields with their values and log the values
     inputs.forEach(input => {
         const span = document.createElement('span');
@@ -113,12 +115,13 @@ function initializeButtons() {
 			case item instanceof Button:
 				button = createButton(item.symbol, item.label, function() {
 	                addText(item.output.summary, 'summary');
-					addText(item.output.action, 'action');
+					addText(item.output.task, 'task');
 					addText(item.output.howTo, 'howTo');
 	            });
 				
 				//Prevent fade
 				if (!item.canFade) {button.classList.add('persistent');};
+				if (item.critical) {button.classList.add('critical');};
 				
 				document.getElementById(item.type).appendChild(button);
 	            break;

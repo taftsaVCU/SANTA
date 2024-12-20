@@ -9,7 +9,7 @@
 	
 	<script src="links.js"></script>
     <script src="script.js"></script>
-	<script src="comments.js"></script>
+	<script src="buttons.js"></script>
 	
 	
 	<!-- Roboto Font -->
@@ -20,27 +20,45 @@
 <body>
     <div class="container">
         <div class="left" id="left">
-			<h4>First Meeting</h4>
-            <div id="first"></div>
-			<h4>Routines</h4>
-            <div id="routine"></div>
-			<h4>Instructions</h4>
-			<div id="instruction"></div>
-			<h4>Actions</h4>
-            <div id="action"></div>
-			<h4>Resources</h4>
-			<div id="resource"></div>
-			<h4>Policies</h4>
-			<div id="policy"></div>			
-			<h4>Engineering</h4>
-			<div id="engineering"></div>
+			<div class="buttonBox">
+				<h4 class="buttonCategory">Before Meeting</h4>
+	            <div id="before" class="buttonhole"></div>
+			</div>
+			<div class="buttonBox">
+				<h4 class="buttonCategory">First Meeting</h4>
+	            <div id="first" class="buttonhole"></div>
+			</div>	
+			<div class="buttonBox">
+				<h4 class="buttonCategory">Routines</h4>
+	            <div id="routine" class="buttonhole"></div>
+			</div>	
+			<div class="buttonBox">
+				<h4 class="buttonCategory">Checks</h4>
+				<div id="check" class="buttonhole"></div>
+			</div>	
+			<div class="buttonBox">
+				<h4 class="buttonCategory">Instructions</h4>
+				<div id="instruction" class="buttonhole"></div>
+			</div>	
+			<div class="buttonBox">
+				<h4 class="buttonCategory">Events</h4>
+	            <div id="event" class="buttonhole"></div>
+			</div>	
+			<div class="buttonBox">
+				<h4 class="buttonCategory">Resources</h4>
+				<div id="resource" class="buttonhole"></div>
+			</div>	
+			<div class="buttonBox">
+				<h4 class="buttonCategory">Engineering</h4>
+				<div id="engineering" class="buttonhole"></div>
+			</div>
         </div>
         <div class="right" id="right">
 			<div id="noteOutput">
 				<p>It was a pleasure meeting with you today! Here is a summary of your appointment. Please let me know if you have any additional questions or concerns.</p>
 				<span>
 					<p class="header"><u>You need to...</u></p>
-					<ul id='todo'></ul>
+					<ul id='task'></ul>
 				</span>
 				<span id="summary">
 					<p class="header"><u>We talked about...</u></p>
@@ -53,6 +71,6 @@
         </div>			
     </div>
 	<div id="toast" class="toast">Text copied to clipboard!</div>
-	<div id="info"><span class="g">S</span>eth's <span class="g">A</span>dvising <span class="g">N</span>ote-<span class="g">T</span>aking <span class="g">A</span>pp <span class="smol">Version 2.0</span></div>
+	<div id="info"><span class="g">S</span>eth's <span class="g">A</span>dvising <span class="g">N</span>ote-<span class="g">T</span>aking <span class="g">A</span>pp <span class="smol">Version 2.1</span></div>
 </body>
 </html>
