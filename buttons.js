@@ -13,7 +13,7 @@ function Button(type, symbol, label, color, canFade, critical, summary, task, ho
 	this.extraInfo = extraInfo
 }
 
-// Consider setting these up so the text is in the HTML file, hidden unless activated. Could have equal functionality, reduced feature potential, or increased feature potential
+// Consider setting these up so the text is in the HTML file (or not in the file, but placed as invisible in the HTML rendering from the start), hidden unless activated. Could have equal functionality, reduced feature potential, or increased feature potential
 // Consider adding a "meeting types" attribute to Button and start by having the user indicate the meeting type (classes, struggles, major change, etc.; tis might not be best)
 
 // Before Meeting
@@ -213,8 +213,8 @@ var additional = new Button(
     null, 
     0, 
     0, 
-    '<input type="text" class="additionalNotes">', 
-    null, 
+    '<textarea type="text" class="additionalNotes">', 
+    null,
     null, 
     null
 );
@@ -438,7 +438,7 @@ var takeCoursesElsewhere = new Button(
     null, 
     1, 
     0,
-	'We talked about ' + linkIt(link.takeCoursesElsewhere, 'taking courses outside VCU') + ' The process on the linked page will help ensure courses taken elsewhere will count properly at VCU. You can explore transfer course equivalents ' + linkIt(link.transferEquivalents, 'here') + '. VCU courses that might be of interest to you to take elsewhere include: <input type="text">.',
+	'We talked about ' + linkIt(link.takeCoursesElsewhere, 'taking courses outside VCU') + '. The process on the linked page will help ensure courses taken elsewhere will count properly at VCU. You can explore transfer course equivalents ' + linkIt(link.transferEquivalents, 'here') + '. VCU courses that might be of interest to you to take elsewhere include: <input type="text">. FI classes cannot be transferred once coursework is started at VCU.',
     'Follow ' + linkIt(link.takeCoursesElsewhere, 'this process') + ' for any courses you plan to take outside VCU.', 
     null, 
     null
@@ -465,7 +465,7 @@ var holdImmunization = new Button(
     1, 
     0,
 	null, 
-    'Complete tasks required to remove the ' + linkIt(link.immunization, 'imminuzation hold') + ' on your account.',
+    'Complete tasks required to remove the ' + linkIt(link.immunization, 'immunization hold') + ' on your account.',
     null, 
     null
 );
@@ -648,7 +648,7 @@ var passFail = new Button(
     null, 
     1, 
     0, 
-    'We discussed the ' + linkIt(link.passFail, 'Pass/Fail grade option') + '. To be eligible, a course must not be required as a (a) course in your major/minor/certificate area, or (b) prerequisite for which you must earn a B. The Pass/Fail option can only be applied to <b>15 credit hours</b>. It <b>cannot</b> be used for courses taken as <b>Historical Repeats</b>.', 
+    'We discussed the ' + linkIt(link.passFail, 'Pass/Fail grade option') + '. To be eligible, a course must not be required as a (a) course in your major/minor/certificate area, or (b) prerequisite for which you must earn a B. The Pass/Fail option can only be applied to <b>15 credit hours</b>. It <b>cannot</b> be used for courses taken as <b>Historical Repeats</b>. Once established for a course, it cannot be revoked for that course. A grade of PP is needed for a prerequisite requiring a grade of C.',
     'Consider the ' + linkIt(link.passFail, 'Pass/Fail grade option') + ', then complete the '+ linkIt(link.passFailForm, 'change in grade mode form') + ' for <input type="text"> if desired.',
     null, 
     null
@@ -661,7 +661,7 @@ var historicalRepeat = new Button(
     null, 
     1, 
     0, 
-    'We discussed the ' + linkIt(link.repeatedCoursePolicy, 'Repeated courses policy') + '. The Historical Repeat option <b>cannot</b> be used with courses taken <b>Pass/Fail</b> or taken at <b>other institutions</b>. Fill out this ' + linkIt(link.historicalRepeatForm, 'form') + ' to initiate the process. The policy can only be used to remove <b>one</b> grade from GPA calculation per course.', 
+    'We discussed the ' + linkIt(link.repeatedCoursePolicy, 'Repeated courses policy') + '. The Historical Repeat option <b>cannot</b> be used with courses taken <b>Pass/Fail</b> or <b>at other institutions</b>. The policy can only be used to remove <b>one</b> grade from GPA calculation per course. Fill out this ' + linkIt(link.historicalRepeatForm, 'form') + ' after completing a repeat to initiate the process.' , 
     'After successfully completing a repeat of <input type="text">, complete the ' + linkIt(link.historicalRepeatForm, 'historical repeat form') + '.', 
     null, 
     null
@@ -669,13 +669,13 @@ var historicalRepeat = new Button(
 
 var academicStanding = new Button(
     'event', 
-    '📈', 
+    '📈',
     'Academic Standing', 
     null, 
     1, 
     0, 
-    'We discussed the importance of remaining in ' + linkIt(link.academicStanding, 'good academic standing') + '. Students with a GPA below 2.0 receive a warning, then probation, and then suspension.', 
-    'Make and execute a plan to improve your GPA. Let me know if you need additional resources!', 
+    'We discussed the importance of remaining in ' + linkIt(link.academicStanding, 'good academic standing') + '. Students with a GPA below 2.0 receive a warning, then probation, and then suspension. If your credits become restricted and no schedule changes are made, classes will automatically be dropped starting with the most recently registered until the credit threshold is crossed. Summers count toward academic standing if classes are taken (be wary of taking one class!).', 
+    'Make and execute a plan to improve your GPA. Let me know if you need additional resources!',
     null, 
     null
 );
@@ -687,7 +687,7 @@ var sap = new Button(
     null, 
     1, 
     0, 
-    'We discussed the ' + linkIt(link.sap, 'Satisfactory Academic Progress') + ' (SAP) policy. SAP must be maintained to continue to receive ' + linkIt(link.financialAid, 'financial aid') + '. If a student\'s credits become restricted and no schedule changes are made, classes will automatically be dropped starting with the most recently registered until the credit threshold is crossed. Summers count toward SAP only if classes are taken (be wary of taking one class).', 
+    'We discussed the ' + linkIt(link.sap, 'Satisfactory Academic Progress') + ' (SAP) policy. SAP must be maintained to continue to receive ' + linkIt(link.financialAid, 'financial aid') + '.', 
     'Make and execute a plan to make SAP next semester. Let me know if you need additional resources!', 
     null, 
     null
@@ -748,13 +748,13 @@ var courseEvaluation = new Button(
 var alternativeCredit = new Button(
     'event', 
     '📚', 
-    'Alt. Credit Sources', 
+    'Add. Credit Sources',
     null, 
     1, 
     0, 
-    'We discussed the ' + linkIt(link.alternativeCredit, 'Alternative sources of academic credit') + ' policy. Courses can also be ' + linkIt(link.transferEquivalents, 'transferred') + ' from other institutions.', 
-    null, 
-    null, 
+    'We discussed ' + linkIt(link.alternativeCredit, 'additional sources of academic credit') + ' such as ' + linkIt(link.clep, 'CLEP exams') + ' (with support from ' + linkIt(link.modernStates, 'Modern States') + ') and ' + linkIt(link.transferEquivalents, 'transfer') + ' credit from other institutions. You must complete at least 25% of you credits at VCU, including at least 30 of the last 45 credits.', 
+    null,
+    null,
     null
 );
 
@@ -792,8 +792,8 @@ var mathAleks = new Button(
     null, 
     1, 
     0, 
-    'I recommend you make use of the ' + linkIt(link.mathAleks, 'ALEKS process for Math') + '. Students in the College of Engineering can increase their placement by 2 levels (other students can only raise it by 1). After raising your placement score, you need to report it using ' + linkIt(link.mathAleksReport, 'this form') + '.', 
-    'As needed, take the ' + linkIt(link.mathAleks, 'MATH placement test') + ' and complete modules up to <input type="text">. When done, complete ' + linkIt(link.mathAleksReport, 'this form') + '.', 
+    'I recommend you make use of the ' + linkIt(link.mathAleks, 'ALEKS process for Math') + '. Students in the College of Engineering can <b>skip the next level</b> and attempt to earn a placement <b>two levels</b> above the earned placement. After raising your placement score, you need to report it using ' + linkIt(link.mathAleksReport, 'this form') + '.', 
+    'As needed, take the ' + linkIt(link.mathAleks, 'MATH placement test') + ' and complete modules for <input type="text">. When done, complete ' + linkIt(link.mathAleksReport, 'this form') + '.', 
     null, 
     null
 );
@@ -883,7 +883,7 @@ var chemSeats = new Button(
     null, 
     1, 
     0, 
-    'The Chemistry department rolls out more seats over time for their classes. Additionally, seats will open after final grades are submitted since some people will not pass prerequisite courses.',
+    'The Chemistry department rolls out more seats over time for their classes. A few seats may open after final grades are submitted since some people will likely not pass prerequisite courses.',
 	'Check once every few days for open seats in CHEM/Z <input type="text">. After final grades are due for the semester, start checking daily.',	
     null, 
     null

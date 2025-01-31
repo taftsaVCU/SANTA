@@ -35,6 +35,8 @@ var link = {
 	overrides: 'https://academicadvising.vcu.edu/forms/course-overrides/',
 	timelyCare: 'https://counseling.vcu.edu/students/timelycare/',
 	collegeScheduler: 'https://vcu.collegescheduler.com/entry',
+	clep: 'https://transfer.vcu.edu/transferring-credits/clep-credits/',
+	modernStates: 'https://modernstates.org/freshman-year-free/',
 	
 	majorMaps: 'https://majormaps.vcu.edu/',
 	

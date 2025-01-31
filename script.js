@@ -16,7 +16,7 @@ function addText(html, where) {
 	    // Add event listener to the div for deletion
 	    newText.addEventListener('click', function(event) {
 	        // Check if the clicked element is a link
-	        if (event.target.tagName !== 'A' && event.target.tagName !== 'INPUT') {
+	        if (event.target.tagName !== 'A' && event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
 	            if (confirm('Do you want to delete this entry?')) {
 	                newText.remove();
 	            }
@@ -37,10 +37,6 @@ function showToast(message) {
 }
 
 function copyText() {
-    const rightDiv = document.getElementById('noteOutput');
-    const inputs = Array.from(rightDiv.getElementsByTagName('input'));
-    const spans = [];
-	
 	//Handle Critical Buttons
 	var alertList = document.getElementsByClassName('critical');
 	var alertText = 'You haven\'t used the following "critical" buttons: ';
@@ -61,13 +57,21 @@ function copyText() {
 		alert(alertText);
 	}
 	
-    // Replace input fields with their values and log the values
+	//Prepare to copy text
+    const rightDiv = document.getElementById('noteOutput');
+    const inputs = Array.from(rightDiv.querySelectorAll('input, textarea'));
+    var spans = [];
+	
+	var wasInputArray = [];
+	var wasTextareaArray = [];
+	
+    // Replace input fields with their values
     inputs.forEach(input => {
         const span = document.createElement('span');
+		span.className = 'was' + input.nodeName;
         span.textContent = input.value;
         input.parentNode.replaceChild(span, input);
         spans.push(span);
-        console.log('handled ' + span.textContent);
     });
 
     // Copy the content
@@ -86,7 +90,16 @@ function copyText() {
 
     // Restore input fields
     spans.forEach(span => {
-        const input = document.createElement('input');
+		var input;
+		
+		if (span.className == 'wasINPUT') {
+			input = document.createElement('input');
+		};
+		
+		if (span.className == 'wasTEXTAREA') {
+			input = document.createElement('textarea');
+		};
+        
         input.type = 'text';
         input.value = span.textContent;
         span.parentNode.replaceChild(input, span);
