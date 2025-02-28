@@ -20,6 +20,7 @@ var link = {
 	registrationInstructions: "https://registrar.vcu.edu/registration/registration-guide/",
 	alternativeCredit: "https://bulletin.vcu.edu/undergraduate/undergraduate-study/admission-university/additional-sources-of-credit/",
 	transferEquivalents: "https://transfer.vcu.edu/transferring-credits/transfer-course-equivalents/",
+	transferContact: 'https://transfer.vcu.edu/about/contact-us/',
 	changeMajor: "https://docs.google.com/a/vcu.edu/forms/d/e/1FAIpQLScwHVA7WToKtPDdLwnIyODKpQuyO9gZo1gCg1MtVgMKi6ZcEQ/viewform",
 	changeMajorRequirements: "https://academicadvising.vcu.edu/change-your-major/",
 	changeMinor: "https://docs.google.com/a/vcu.edu/forms/d/e/1FAIpQLSdflGo9cbNm5Htn2JxGNS4wbUq5fAqt7zTCbop0H45h10NupQ/viewform",
@@ -37,14 +38,22 @@ var link = {
 	collegeScheduler: 'https://vcu.collegescheduler.com/entry',
 	clep: 'https://transfer.vcu.edu/transferring-credits/clep-credits/',
 	modernStates: 'https://modernstates.org/freshman-year-free/',
+	careerServices: 'https://careers.vcu.edu/',
+	
+	library: 'https://www.library.vcu.edu/',
+	studyWell: 'https://www.library.vcu.edu/about/events/study-well/',
 	
 	majorMaps: 'https://majormaps.vcu.edu/',
+	
+	cbapScoreSend: 'https://apstudents.collegeboard.org/sending-scores',
+	
 	
 	terms: "https://registrar.vcu.edu/academic-schedules/schedule-of-classes/",
 	miniterm: 'https://registrar.vcu.edu/registration/registration-guide/spring-miniterms/',
 	jTerm: "https://winter.vcu.edu/courses/j-term/",
 	intersession: "https://winter.vcu.edu/",
 	summer: "https://summer.vcu.edu/summer-courses/",
+	summerHousing: 'https://housing.vcu.edu/summerhousing/',
 	
 	degreeWorks: 'https://dw-prod.ec.vcu.edu/responsiveDashboard/',
 	degreeWorksSep: 'https://dw-prod.ec.vcu.edu/responsiveDashboard/plans',
@@ -53,6 +62,7 @@ var link = {
 	engOverride: "https://egr.vcu.edu/current-students/student-services/undergraduate/#OverrideForms",
 	mathAleks: "https://math.vcu.edu/programs/undergraduate/courses/math-placement/score-interpretation/prep-and-learning-modules/",
 	mathAleksReport: "https://docs.google.com/forms/d/e/1FAIpQLSfJZ3ZLwSKBs3xx4UZLOC0CWjcfP3VuEQPjw0758dBtjF65Mw/viewform",
+	mathPlacement: 'https://math.vcu.edu/programs/undergraduate/courses/math-placement/',
 	chemAleks: "https://chemistry.vcu.edu/undergraduate/placement-test-and-aleks/",
 	businessMajorChange: "https://docs.google.com/a/vcu.edu/forms/d/e/1FAIpQLSeIB9Ra9uM7ovgGnRDHNBXBsBdA6xbWNNIO6hIrJVNDBcrQlA/viewform",
 	preMed: "https://bulletin.vcu.edu/undergraduate/college-humanities-sciences/prehealth-minors/pre-medicine/",
@@ -71,6 +81,7 @@ var link = {
 	engStudentOrgs: 'https://egr.vcu.edu/current-students/student-organizations/',
 	
 	coursicle: 'https://www.coursicle.com/vcu/',
+	vccs: 'https://courses.vccs.edu/courses',
 	
 	financialAid: 'https://sfs.vcu.edu/',
 	financialAidContact: 'https://sfs.vcu.edu/about/contact-us/',	

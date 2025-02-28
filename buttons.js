@@ -15,12 +15,13 @@ function Button(type, symbol, label, color, canFade, critical, summary, task, ho
 
 // Consider setting these up so the text is in the HTML file (or not in the file, but placed as invisible in the HTML rendering from the start), hidden unless activated. Could have equal functionality, reduced feature potential, or increased feature potential
 // Consider adding a "meeting types" attribute to Button and start by having the user indicate the meeting type (classes, struggles, major change, etc.; tis might not be best)
+//General redundancy can be reduced (task and info)
 
 // Before Meeting
 var checkWarnings = new Button(
 	'before',
 	'⚠️',
-	'Check Holds, Warnings, Standing',
+	'Check Holds, Alerts, Warnings, Standing',
 	null,
 	1,
 	1,
@@ -141,6 +142,32 @@ var survey = new Button(
 );
 
 // Routines
+var classAlert = new Button(
+    'routine', 
+    '⚠️', 
+    'Alert', 
+    null, 
+    1, 
+    1, 
+    'You have one or more Alerts in Navigate related to <input type="text">.', 
+    null, 
+    null, 
+    null
+);
+
+var ferpa = new Button(
+    'routine', 
+    '📜', 
+    'FERPA', 
+    null, 
+    1, 
+    1, 
+    '<input type="text"> was with you during your appointment. I requested and received verbal permission from you to share your ' + linkIt(link.ferpa, 'FERPA') + '-protected information with them. You can see more information about VCU\'s FERPA-related policies (including consent forms) ' + linkIt(link.ferpaVcu, 'here') + '.', 
+    null, 
+    null, 
+    null
+);
+
 var discussSemester = new Button(
     'routine', 
     '🏫', 
@@ -159,7 +186,7 @@ var studentQuestions = new Button(
     '❓', 
     'Student Questions', 
     null, 
-    1, 
+    0, 
     0, 
     'You asked about <input type="text">.', 
     null, 
@@ -206,6 +233,32 @@ var followUp = new Button(
     null
 );
 
+var physLab = new Button(
+    'routine', 
+    '⚗️', 
+    'PHYS Lab', 
+    null, 
+    1, 
+    1, 
+    'You are slated to enroll in a lower-division PHYS lab class. You will need to register for a lecture section (5 credits) and a lab (0 credits). The code for both will be the same (unlike other departments\' lab classes).', 
+    'Register for two sections of your PHYS class, one lecture and one lab (same code).', 
+    null, 
+    null
+);
+
+var creditCheck = new Button(
+    'routine', 
+    '🔢', 
+    'Credit Counts', 
+    null, 
+    1, 
+    0,
+	'You may have registration requirements for financial aid, scholarships, programs, etc. Most students need to register for at least 12 credits per semester (full-time) for financial aid. Some students need to register for 28 credits per year for scholarships.',
+    null,
+    null, 
+    null
+);
+
 var additional = new Button(
     'routine', 
     '✏️', 
@@ -229,46 +282,6 @@ var additionalTask = new Button(
     0,
 	null,
     '<input type="text" class="additionalNotes">',
-    null, 
-    null
-);
-
-//Checks
-var creditCheck = new Button(
-    'check', 
-    '🔢', 
-    'Credit Counts', 
-    null, 
-    1, 
-    0,
-	'You may have registration requirements for financial aid, scholarships, programs, etc. Most students need to register for at least 12 credits per semester (full-time) for financial aid. Some students need to register for 28 credits per year for scholarships.',
-    null,
-    null, 
-    null
-);
-
-var physLab = new Button(
-    'check', 
-    '⚗️', 
-    'PHYS Lab', 
-    null, 
-    1, 
-    1, 
-    'You are slated to enroll in a lower-division PHYS lab class. You will need to register for a lecture section (5 credits) and a lab (0 credits). The code for both will be the same (unlike other departments\' lab classes).', 
-    'Register for two sections of your PHYS class, one lecture and one lab (same code).', 
-    null, 
-    null
-);
-
-var ferpa = new Button(
-    'check', 
-    '📜', 
-    'FERPA', 
-    null, 
-    1, 
-    1, 
-    '<input type="text"> was with you during your appointment. I requested and received verbal permission from you to share your ' + linkIt(link.ferpa, 'FERPA') + '-protected information with them. You can see more information about VCU\'s FERPA-related policies (including consent forms) ' + linkIt(link.ferpaVcu, 'here') + '.', 
-    null, 
     null, 
     null
 );
@@ -339,29 +352,16 @@ var courseScheduler = new Button(
     null
 );
 
-var waitlist = new Button(
-    'instruction', 
-    '⏳', 
-    'Waitlist Process', 
-    null, 
-    1, 
-    0,
-	null, 
-    null, 
-    'Get on a <b>waitlist</b>: Follow ' + linkIt(link.waitlistInstructions, 'these instructions') + '. If you need additional help, just let me know!', 
-    null
-);
-
-var trackCourse = new Button(
+var noSeats = new Button(
     'instruction', 
     '💺', 
-    'Track Open Seats', 
+    'No Seats', 
     null, 
     1, 
     0,
-	null,
 	null, 
-    'Track open <b>seats</b>: If a course you need is full and has no waitlist, you can use the ' + linkIt(link.coursicle, 'Coursicle') + ' app to get an alert when a seat opens. Coursicle is not affiliated with or contracted by VCU, so use this tool at your own risk.',
+    null, 
+    'Get a <b>seat</b> in a <b>full class</b>: Most classes have a ' + linkIt(link.waitlistInstructions, 'waitlist') + ' you can join. Register within 24 hours of receiving your email or you will lose your spot. If the course has no waitlist, check regularly for open seats (someone may drop or more may be added). You can also use the ' + linkIt(link.coursicle, 'Coursicle') + ' app to get an alert when a seat opens. Coursicle is not affiliated with or contracted by VCU, so use this tool at your own risk.',
     null
 );
 
@@ -373,8 +373,8 @@ var changeMajor = new Button(
     null, 
     1, 
     0,
-    'We discussed the possibility of a ' + linkIt(link.changeMajor, 'change of major/concentration') + '. Some programs have ' + linkIt(link.changeMajorRequirements, 'requirements') + ' to change into. <input type="text">', 
-    'Complete the ' + linkIt(link.changeMajor, 'major/concentration change form') + ' if desired.', 
+    'We discussed the possibility of ' + linkIt(link.changeMajor, 'changing your major or concentration') + '. Some programs have ' + linkIt(link.changeMajorRequirements, 'requirements') + ' to change into. <input type="text">', 
+    'Complete ' + linkIt(link.changeMajor, 'this form') + ' to switch to <input type="text"> if desired.', 
     null, 
     null
 );
@@ -386,8 +386,8 @@ var changeMinor = new Button(
     null, 
     1, 
     0, 
-    'We discussed the possibility of a ' + linkIt(link.changeMinor, 'change of minor') + '. <input type="text">', 
-    'Complete the ' + linkIt(link.changeMinor, 'minor change form') + ' if desired.', 
+    'We talked about the <input type="text"> minor. Complete ' + linkIt(link.changeMinor, 'this form') + ' to add or remove a minor.', 
+    'Complete the ' + linkIt(link.changeMinor, 'minor change form') + ' to <input type="text"> the <input type="text"> minor if desired.', 
     null, 
     null
 );
@@ -438,8 +438,21 @@ var takeCoursesElsewhere = new Button(
     null, 
     1, 
     0,
-	'We talked about ' + linkIt(link.takeCoursesElsewhere, 'taking courses outside VCU') + '. The process on the linked page will help ensure courses taken elsewhere will count properly at VCU. You can explore transfer course equivalents ' + linkIt(link.transferEquivalents, 'here') + '. VCU courses that might be of interest to you to take elsewhere include: <input type="text">. FI classes cannot be transferred once coursework is started at VCU.',
+	'We talked about taking <input type="text"> outside of VCU. ' + linkIt(link.takeCoursesElsewhere, 'This process') + ' will help ensure courses taken elsewhere will count properly at VCU. You will also need to apply and register at the other institution (check their website and/or contact their admissions department for details). The process can take some time, so start ASAP. You can explore ' + linkIt(link.transferEquivalents, 'transfer course equivalents') + ' and ' + linkIt(link.vccs, 'VCCS course offerings') + ' online. Courses at other institutions may have prerequisites you need to transfer to them from VCU. FI classes cannot be transferred to VCU once any coursework is started at VCU.',
     'Follow ' + linkIt(link.takeCoursesElsewhere, 'this process') + ' for any courses you plan to take outside VCU.', 
+    null, 
+    null
+);
+
+var missingCredit = new Button(
+    'event', 
+    '◌', 
+    'Missing Credit',
+    null, 
+    1, 
+    0,
+    'You have earned credit (AP, DE, etc.) that you have not officially reported. You may have been given access to a subsequent class via an override, but you still need the credit officially. For AP scores, see ' + linkIt(link.cbapScoreSend, 'this page') + ' for information on having your scores sent to VCU. For Dual Enrollment classes, communicate with the institution awarding the college credit (or your high school guidance counselor) and have your transcript officially sent to VCU. If you are not sure how to proceed, ' + linkIt(link.transferContact, 'contact the Transfer Center') + '.',
+	'Report your credit for <input type="text"> (see details below).',
     null, 
     null
 );
@@ -447,11 +460,11 @@ var takeCoursesElsewhere = new Button(
 var nonSpringFall = new Button(
     'event', 
     '☀️', 
-    'Non-FS Terms', 
+    'Non-FS Terms',
     null, 
     1, 
     0, 
-    'VCU classes can be taken during non-standard ' + linkIt(link.terms, 'terms') + ' such as ' + linkIt(link.summer, 'summer') + ', ' + linkIt(link.intersession, 'winter intersession') + ', ' + linkIt(link.jTerm, 'J-term') + ', and ' + linkIt(link.miniterm, 'miniterm') + ' sessions. This might be an option for you for <input type="text">. Please note that taking Summer classes may cost more than increasing Fall/Spring courseloads. If your Intersession course would cause an overload for your Spring registration, email ' + linkIt('mailto:rar@vcu.edu', 'rar@vcu.edu') + ' to request that they manually register you.', 
+    'VCU classes can be taken during non-standard ' + linkIt(link.terms, 'terms') + ' such as ' + linkIt(link.summer, 'summer') + ', ' + linkIt(link.intersession, 'winter intersession') + ', ' + linkIt(link.jTerm, 'J-term') + ', and ' + linkIt(link.miniterm, 'miniterm') + ' sessions. This might be an option for you for <input type="text">. Please note that taking Summer classes may cost more than increasing Fall/Spring courseloads, especially if you need to ' + linkIt(link.summerHousing, 'live on campus') + '. If your Intersession course would cause an overload for your Spring registration, email ' + linkIt('mailto:rar@vcu.edu', 'rar@vcu.edu') + ' to request that they manually register you.', 
     'Explore non-Fall/Spring semester options.',
     null, 
     null
@@ -471,19 +484,6 @@ var holdImmunization = new Button(
 );
 
 // Resources
-var majorMaps = new Button(
-    'resource', 
-    '🗺️', 
-    'Major Maps', 
-    null, 
-    1, 
-    0, 
-    'VCU publishes ' + linkIt(link.majorMaps, 'Major Maps') + ' that include information about program, requirements, and professional outcomes. If you are considering another major, you can use these as a tool to inform your decision to change.', 
-    'Explore the ' + linkIt(link.majorMaps, 'Major Map') + '(s) for <input type="text">.', 
-    null, 
-    null
-);
-
 var financialAid = new Button(
     'resource', 
     '💰', 
@@ -493,6 +493,19 @@ var financialAid = new Button(
     0, 
     'I recommended that you discuss your need with ' + linkIt(link.financialAid, 'Student Financial Services') + '.', 
     'Contact ' + linkIt(link.financialAidContact, 'Student Financial Services') + ' about <input type="text">.', 
+    null, 
+    null
+);
+
+var learning = new Button(
+    'resource', 
+    '📖', 
+    'Learning Center', 
+    null, 
+    1, 
+    0, 
+    'I recommended that you seek support from the ' + linkIt(link.learning, 'Campus Learning Center') + ', which coordinates individual Tutoring, individual Academic Coaching, and group Supplemental Instruction.', 
+    'Plan to make use of the ' + linkIt(link.learning, 'Campus Learning Center') + ' for <input type="text">.', 
     null, 
     null
 );
@@ -519,6 +532,19 @@ var mathHelp = new Button(
     0, 
     'I recommended that you seek support from the ' + linkIt(link.mathHelpCenter, 'Math Help Center') + '.', 
     'Visit the ' + linkIt(link.mathHelpCenter, 'Math Help Center') + ' for help with math.', 
+    null, 
+    null
+);
+
+var studyWell = new Button(
+    'resource', 
+    '💚', 
+    'StudyWell', 
+    null, 
+    1, 
+    0, 
+    'The ' + linkIt(link.library, 'VCU Libraries') + ' offers a series of sessions called ' + linkIt(link.studyWell, 'StudyWell') + ', which are designed to help you develop both your study skills and your overall wellbeing.', 
+    'Check out the ' + linkIt(link.studyWell, 'StudyWell') + ' offerings for the next few weeks and try one if it seems like it could be helpful.', 
     null, 
     null
 );
@@ -588,19 +614,6 @@ var advocacy = new Button(
     null
 );
 
-var learning = new Button(
-    'resource', 
-    '📖', 
-    'Learning Center', 
-    null, 
-    1, 
-    0, 
-    'I recommended that you seek support from the ' + linkIt(link.learning, 'Campus Learning Center') + ', which coordinates individual Tutoring, individual Academic Coaching, and group Supplemental Instruction.', 
-    'Plan to make use of the ' + linkIt(link.learning, 'Campus Learning Center') + ' for <input type="text">.', 
-    null, 
-    null
-);
-
 var global = new Button(
     'resource', 
     '🌍', 
@@ -627,6 +640,32 @@ var health = new Button(
     null
 );
 
+var majorMaps = new Button(
+    'resource', 
+    '🗺️', 
+    'Major Maps', 
+    null, 
+    1, 
+    0, 
+    'VCU publishes ' + linkIt(link.majorMaps, 'Major Maps') + ' that include information about program, requirements, and professional outcomes. If you are considering another major, you can use these as a tool to inform your decision to change.', 
+    'Explore the ' + linkIt(link.majorMaps, 'Major Map') + '(s) for <input type="text">.', 
+    null, 
+    null
+);
+
+var careerServices = new Button(
+    'resource',
+    '🧑‍💼', 
+    'Career Services', 
+    null, 
+    1, 
+    0, 
+    linkIt(link.careerServices, 'VCU Career Services') + ' can help you find answers to questions about careers, internships, applications, interviews, and more. Appointments are scheduled using ' + linkIt(link.handshake, 'Handshake') + '.',
+	'Make an appointment with ' + linkIt(link.careerServices, 'VCU Career Services') + ' using ' + linkIt(link.handshake, 'Handshake') + '.',
+    null, 
+    null
+);
+
 // Former Policies, now Events
 var withdraw = new Button(
     'event', 
@@ -635,8 +674,8 @@ var withdraw = new Button(
     null, 
     1,
     0, 
-    'We discussed the ' + linkIt(link.addDropWithdraw, 'Withdraw policy') + '. There are many implications of withdrawal, and you should check with various people/offices before withdrawing. Registration requirements exist for ' + linkIt(link.dropWithdrawSFS, 'financial aid') + ', ' + linkIt(link.housing, 'housing') + ', and ' + linkIt(link.military, 'military support') + '. Violating these requirements may result in owing VCU money or having housing revoked immediately (failing courses can have adverse financial effects, too). Withdrawals count as unsuccessfully attempted courses for the purposes of ' + linkIt(link.sap, 'SAP') + '. They also increase your workload for future semesters (compared to successful completion). Withdrawal happens via the registration system in ' + linkIt(link.eServices, 'eServices') + '). If you need to withdraw and have a hold on your account, ' + linkIt('mailto:rar@vcu.ed', 'email the registrar') + ' (rar@vcu.ed) and provide your situation, name, V number, course code, and CRN.', 
-    'Discuss the implications of withdrawal with all relevant people/offices. ' + linkIt(link.withdrawHowTo, 'Withdraw') + ' from <input type="text"> if desired.',
+    'We discussed the ' + linkIt(link.addDropWithdraw, 'Withdraw policy') + '. There are many implications of withdrawal, and you should check with various people/offices before withdrawing. Registration requirements exist for ' + linkIt(link.dropWithdrawSFS, 'financial aid') + ', ' + linkIt(link.housing, 'housing') + ', and ' + linkIt(link.military, 'military support') + ', and you need complete information before weighing the consequences of withdrawal against the adverse effects of low grades. Withdrawals count as unsuccessfully attempted courses for the purposes of ' + linkIt(link.sap, 'SAP') + '. They also increase your workload for future semesters (compared to successful completion). Withdrawal happens via the registration system in ' + linkIt(link.eServices, 'eServices') + '. If you need to withdraw and have a hold on your account, ' + linkIt('mailto:rar@vcu.ed', 'email the registrar') + ' (rar@vcu.ed) and provide your situation, name, V number, course code, and CRN.', 
+    'Discuss the implications of withdrawal with all relevant people/offices (see details below). ' + linkIt(link.withdrawHowTo, 'Withdraw') + ' from <input type="text"> if desired.',
     null, 
     null
 );
@@ -792,8 +831,8 @@ var mathAleks = new Button(
     null, 
     1, 
     0, 
-    'I recommend you make use of the ' + linkIt(link.mathAleks, 'ALEKS process for Math') + '. Students in the College of Engineering can <b>skip the next level</b> and attempt to earn a placement <b>two levels</b> above the earned placement. After raising your placement score, you need to report it using ' + linkIt(link.mathAleksReport, 'this form') + '.', 
-    'As needed, take the ' + linkIt(link.mathAleks, 'MATH placement test') + ' and complete modules for <input type="text">. When done, complete ' + linkIt(link.mathAleksReport, 'this form') + '.', 
+    'I recommend you make use of the ' + linkIt(link.mathAleks, 'ALEKS process for Math') + '. Additional prerequisite MATH courses may increase the cost of your degree. Students in the College of Engineering can <b>skip the next level</b> and attempt to earn a placement <b>two levels</b> above the earned placement. After raising your placement score, you need to report it using ' + linkIt(link.mathAleksReport, 'this form') + '.', 
+    'As needed, take the ' + linkIt(link.mathPlacement, 'MATH placement test') + ' and complete ' + linkIt(link.mathAleks, 'modules') + ' for <input type="text">. When done, complete ' + linkIt(link.mathAleksReport, 'this form') + '.', 
     null, 
     null
 );
@@ -805,7 +844,7 @@ var chemAleks = new Button(
     null, 
     1, 
     0, 
-    'If you took Chemistry in high school, I recommend you make use of the ' + linkIt(link.chemAleks, 'ALEKS process for Chemistry') + '. Placement results can be either CHEM 100 or CHEM 101. Placements of CHEM 100 can be increased to CHEM 101 via completion of learning modules. Retaining a placement of CHEM 100 means you must complete CHEM 100 with a B or higher before you can take CHEM 101. The pass/fail option cannot be used for this prerequisite requirement.', 
+    'If you took Chemistry in high school, I recommend you make use of the ' + linkIt(link.chemAleks, 'ALEKS process for Chemistry') + '. Placement results can be either CHEM 100 or CHEM 101. Taking CHEM 100 may increase the cost of your degree. Placements of CHEM 100 can be increased to CHEM 101 via completion of learning modules. Retaining a placement of CHEM 100 means you must complete CHEM 100 with a B or higher before you can take CHEM 101. The pass/fail option cannot be used for this prerequisite requirement.', 
     'Take the ' + linkIt(link.chemAleks, 'CHEM placement test') + '. If needed, complete modules to attain placement in CHEM 101.',  
     null, 
     null
@@ -820,19 +859,6 @@ var businessMajorChange = new Button(
     0,
 	'You expressed interest in changing your major to join the School of Business. You must attend a ' + linkIt(link.businessMajorChange, 'change of major session') + ' before completing the major change form.',
     'Attend a ' + linkIt(link.businessMajorChange, 'change of major session') + ' with the School of Business.',  
-    null, 
-    null
-);
-
-var practicalAI = new Button(
-    'engineering', 
-    '🤖', 
-    'Practical AI Minor', 
-    null, 
-    1, 
-    0, 
-    'If you need information about the Practical AI minor through the Interdisciplinary Studies program, you should contact Dr. Mariah Crilley at ' + linkIt('mailto:mtcrilley@vcu.edu', 'mtcrilley@vcu.edu') + '.', 
-    null, 
     null, 
     null
 );
@@ -872,19 +898,6 @@ var chemOverride = new Button(
     0,
 	null,
     'Request an override for CHEM/Z <input type="text"> using the form linked on ' + linkIt(link.chemOverride, 'this page') + ', then register once approved.', 
-    null, 
-    null
-);
-
-var chemSeats = new Button(
-    'engineering', 
-    '💺', 
-    'CHEM Seats', 
-    null, 
-    1, 
-    0, 
-    'The Chemistry department rolls out more seats over time for their classes. A few seats may open after final grades are submitted since some people will likely not pass prerequisite courses.',
-	'Check once every few days for open seats in CHEM/Z <input type="text">. After final grades are due for the semester, start checking daily.',	
     null, 
     null
 );
