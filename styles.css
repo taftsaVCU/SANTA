@@ -186,6 +186,10 @@ p:not(.header):hover, li:hover {
     background-color: mistyrose;
 }
 
+p:not(.header) input:hover {
+    cursor: text;
+}
+
 .toast {
     visibility: hidden;
     min-width: 250px;

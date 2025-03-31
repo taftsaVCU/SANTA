@@ -116,8 +116,8 @@ function createButton(symbol, label, onClickFunction) {
     return button;
 }
 
-function initializeButtons() {
-    const leftDiv = document.getElementById('left');
+function initializeButtons() {	
+	const leftDiv = document.getElementById('left');
 
     // Automatically gather all buttons
     for (let key in window) {

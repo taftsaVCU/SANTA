@@ -93,6 +93,10 @@ var link = {
 	dosa: 'https://dos.vcu.edu/',
 	advocacy: 'https://advocacy.vcu.edu/',
 	learning: 'https://clc.vcu.edu/',
+	tutoring: 'https://clc.vcu.edu/tutoring/',
+	si: 'https://clc.vcu.edu/supplemental-instruction/',
+	academicCoaching: 'https://clc.vcu.edu/academic-coaching/',
+	
 	global: 'https://global.vcu.edu/',
 	health: 'https://health.students.vcu.edu/',
 	housing: 'https://housing.vcu.edu/',

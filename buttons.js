@@ -438,8 +438,8 @@ var takeCoursesElsewhere = new Button(
     null, 
     1, 
     0,
-	'We talked about taking <input type="text"> outside of VCU. ' + linkIt(link.takeCoursesElsewhere, 'This process') + ' will help ensure courses taken elsewhere will count properly at VCU. You will also need to apply and register at the other institution (check their website and/or contact their admissions department for details). The process can take some time, so start ASAP. You can explore ' + linkIt(link.transferEquivalents, 'transfer course equivalents') + ' and ' + linkIt(link.vccs, 'VCCS course offerings') + ' online. Courses at other institutions may have prerequisites you need to transfer to them from VCU. FI classes cannot be transferred to VCU once any coursework is started at VCU.',
-    'Follow ' + linkIt(link.takeCoursesElsewhere, 'this process') + ' for any courses you plan to take outside VCU.', 
+	'We talked about taking classes outside of VCU. ' + linkIt(link.takeCoursesElsewhere, 'This process') + ' will help ensure courses taken elsewhere will count properly at VCU. You will need to apply and register at the other institution (check their website and/or contact their admissions department for details). The process can take some time, so start ASAP. You can explore ' + linkIt(link.transferEquivalents, 'transfer course equivalents') + ' and ' + linkIt(link.vccs, 'VCCS course offerings') + ' online. Courses at other institutions may have prerequisites (some of which might be transferrable from VCU). FI classes cannot be transferred to VCU once any coursework is started at VCU. The course equivalents we discussed were: <input type="text">',
+    'Apply and register at the other institution where you intend to take classes. Follow ' + linkIt(link.takeCoursesElsewhere, 'this process') + ' to ensure your credits will transfer.', 
     null, 
     null
 );
@@ -464,8 +464,8 @@ var nonSpringFall = new Button(
     null, 
     1, 
     0, 
-    'VCU classes can be taken during non-standard ' + linkIt(link.terms, 'terms') + ' such as ' + linkIt(link.summer, 'summer') + ', ' + linkIt(link.intersession, 'winter intersession') + ', ' + linkIt(link.jTerm, 'J-term') + ', and ' + linkIt(link.miniterm, 'miniterm') + ' sessions. This might be an option for you for <input type="text">. Please note that taking Summer classes may cost more than increasing Fall/Spring courseloads, especially if you need to ' + linkIt(link.summerHousing, 'live on campus') + '. If your Intersession course would cause an overload for your Spring registration, email ' + linkIt('mailto:rar@vcu.edu', 'rar@vcu.edu') + ' to request that they manually register you.', 
-    'Explore non-Fall/Spring semester options.',
+    'VCU classes can be taken during non-standard ' + linkIt(link.terms, 'terms') + ' such as ' + linkIt(link.summer, 'summer') + ', ' + linkIt(link.intersession, 'winter intersession') + ', ' + linkIt(link.jTerm, 'J-term') + ', half semesters, and ' + linkIt(link.miniterm, 'miniterm') + ' sessions. If your Intersession course would cause an overload for your Spring registration, email ' + linkIt('mailto:rar@vcu.edu', 'rar@vcu.edu') + ' to request that they manually register you. For Summer classes at VCU, register in eServices as usual (selecting Summer as the term). Please note that taking Summer classes may cost more than increasing Fall/Spring courseloads, especially if you need to ' + linkIt(link.summerHousing, 'live on campus') + '. Some classes can also be completed at community colleges over the summer.', 
+    'Explore, consider, and register for non-Fall/Spring semester classes as desired.',
     null, 
     null
 );
@@ -484,6 +484,19 @@ var holdImmunization = new Button(
 );
 
 // Resources
+var learning = new Button(
+    'resource', 
+    '📖', 
+    'Learning Center', 
+    null, 
+    1, 
+    0, 
+    'I recommended that you seek support from the ' + linkIt(link.learning, 'Campus Learning Center') + ', which coordinates individual ' + linkIt(link.tutoring, 'Tutoring') + ', individual ' + linkIt(link.academicCoaching, 'Academic Coaching') + ', and group ' + linkIt(link.si, 'Supplemental Instruction') + '.', 
+    'Plan to make use of the ' + linkIt(link.learning, 'Campus Learning Center') + ' for <input type="text">.', 
+    null, 
+    null
+);
+
 var financialAid = new Button(
     'resource', 
     '💰', 
@@ -493,19 +506,6 @@ var financialAid = new Button(
     0, 
     'I recommended that you discuss your need with ' + linkIt(link.financialAid, 'Student Financial Services') + '.', 
     'Contact ' + linkIt(link.financialAidContact, 'Student Financial Services') + ' about <input type="text">.', 
-    null, 
-    null
-);
-
-var learning = new Button(
-    'resource', 
-    '📖', 
-    'Learning Center', 
-    null, 
-    1, 
-    0, 
-    'I recommended that you seek support from the ' + linkIt(link.learning, 'Campus Learning Center') + ', which coordinates individual Tutoring, individual Academic Coaching, and group Supplemental Instruction.', 
-    'Plan to make use of the ' + linkIt(link.learning, 'Campus Learning Center') + ' for <input type="text">.', 
     null, 
     null
 );
@@ -687,7 +687,7 @@ var passFail = new Button(
     null, 
     1, 
     0, 
-    'We discussed the ' + linkIt(link.passFail, 'Pass/Fail grade option') + '. To be eligible, a course must not be required as a (a) course in your major/minor/certificate area, or (b) prerequisite for which you must earn a B. The Pass/Fail option can only be applied to <b>15 credit hours</b>. It <b>cannot</b> be used for courses taken as <b>Historical Repeats</b>. Once established for a course, it cannot be revoked for that course. A grade of PP is needed for a prerequisite requiring a grade of C.',
+    'We discussed the ' + linkIt(link.passFail, 'Pass/Fail grade option') + '. To be eligible, a course must not be required as a (a) course in your major/minor/certificate area, or (b) prerequisite for which you must earn a B. The Pass/Fail option can only be applied to <b>15 credit hours</b>. Once established for a course, it cannot be revoked for that course. A grade of PP is needed for a prerequisite requiring a grade of C.',
     'Consider the ' + linkIt(link.passFail, 'Pass/Fail grade option') + ', then complete the '+ linkIt(link.passFailForm, 'change in grade mode form') + ' for <input type="text"> if desired.',
     null, 
     null
@@ -700,7 +700,7 @@ var historicalRepeat = new Button(
     null, 
     1, 
     0, 
-    'We discussed the ' + linkIt(link.repeatedCoursePolicy, 'Repeated courses policy') + '. The Historical Repeat option <b>cannot</b> be used with courses taken <b>Pass/Fail</b> or <b>at other institutions</b>. The policy can only be used to remove <b>one</b> grade from GPA calculation per course. Fill out this ' + linkIt(link.historicalRepeatForm, 'form') + ' after completing a repeat to initiate the process.' , 
+    'We discussed the ' + linkIt(link.repeatedCoursePolicy, 'Repeated courses policy') + '. The Historical Repeat option <b>cannot</b> be used with courses taken at other institutions. The policy can only be used to remove <b>one</b> grade from GPA calculation per course. Fill out this ' + linkIt(link.historicalRepeatForm, 'form') + ' after completing a repeat to initiate the process.' , 
     'After successfully completing a repeat of <input type="text">, complete the ' + linkIt(link.historicalRepeatForm, 'historical repeat form') + '.', 
     null, 
     null
@@ -726,7 +726,7 @@ var sap = new Button(
     null, 
     1, 
     0, 
-    'We discussed the ' + linkIt(link.sap, 'Satisfactory Academic Progress') + ' (SAP) policy. SAP must be maintained to continue to receive ' + linkIt(link.financialAid, 'financial aid') + '.', 
+    'We discussed the ' + linkIt(link.sap, 'Satisfactory Academic Progress') + ' (SAP) policy. SAP must be maintained to continue to receive some common forms of ' + linkIt(link.financialAid, 'financial aid') + '.', 
     'Make and execute a plan to make SAP next semester. Let me know if you need additional resources!', 
     null, 
     null
@@ -844,7 +844,7 @@ var chemAleks = new Button(
     null, 
     1, 
     0, 
-    'If you took Chemistry in high school, I recommend you make use of the ' + linkIt(link.chemAleks, 'ALEKS process for Chemistry') + '. Placement results can be either CHEM 100 or CHEM 101. Taking CHEM 100 may increase the cost of your degree. Placements of CHEM 100 can be increased to CHEM 101 via completion of learning modules. Retaining a placement of CHEM 100 means you must complete CHEM 100 with a B or higher before you can take CHEM 101. The pass/fail option cannot be used for this prerequisite requirement.', 
+    'If you took Chemistry in high school, I recommend you make use of the ' + linkIt(link.chemAleks, 'ALEKS process for Chemistry') + '. Placement results can be either CHEM 100 or CHEM 101. A placement of 101 allows you to take CHEM/Z 101 and/or BIOL/Z 101 without taking CHEM 100 as a prerequisite. Taking CHEM 100 may increase the cost of your degree. Placements of CHEM 100 can be increased to CHEM 101 via completion of learning modules. Retaining a placement of CHEM 100 means you must complete CHEM 100 with a B or higher before you can take CHEM/Z 101 or BIOL/Z 101. The pass/fail option cannot be used for this prerequisite requirement.', 
     'Take the ' + linkIt(link.chemAleks, 'CHEM placement test') + '. If needed, complete modules to attain placement in CHEM 101.',  
     null, 
     null
