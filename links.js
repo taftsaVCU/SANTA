@@ -37,7 +37,7 @@ var link = {
 	timelyCare: 'https://counseling.vcu.edu/students/timelycare/',
 	collegeScheduler: 'https://vcu.collegescheduler.com/entry',
 	clep: 'https://transfer.vcu.edu/transferring-credits/clep-credits/',
-	modernStates: 'https://modernstates.org/freshman-year-free/',
+	modernStates: 'https://modernstates.org/faq/#clepvoucherprogram',
 	careerServices: 'https://careers.vcu.edu/',
 	
 	library: 'https://www.library.vcu.edu/',

@@ -214,7 +214,7 @@ var registrationDates = new Button(
     null, 
     1, 
     1, 
-    'Your ' + linkIt(link.registrationDates, 'registration date') + ' is <input type="text"> at 8am. In-progress credits don\'t count toward totals for registration. TRiO, SAEO, or other exceptions may mean your date is earlier. You can <b>Plan Ahead</b> now (<b>' + linkIt(link.eServices, "eServices") + '</b> > <b>Students</b> > <b>Students - Registration</b> > <b>Plan Ahead</b>), check the night before your registration date, and then finalize registration once it is available to you.', 
+    'Your ' + linkIt(link.registrationDates, 'registration date') + ' is <input type="text"> at 8am. TRiO, SAEO, or other exceptions may mean your date is earlier. You can <b>Plan Ahead</b> now (<b>' + linkIt(link.eServices, "eServices") + '</b> > <b>Students</b> > <b>Students - Registration</b> > <b>Plan Ahead</b>), check the night before your registration date, and then finalize registration once it is available to you.', 
     null, 
     null, 
     null
@@ -739,8 +739,8 @@ var exceptions = new Button(
     null, 
     1, 
     0, 
-    'We discussed the ' + linkIt(link.arac, 'Academic Regulations Appeals') + ' (ARAC) process. This option can be pursued when other policies do not apply but there is valid cause for an exception. For students with a current UAA advisor, see ' + linkIt(link.uaaAracForm, 'this page') + '.', 
-    'If desired, follow the ' + linkIt(link.uaaAracForm, 'ARAC appeal instructions') + ' to get an exception for <input type="text">.', 
+    'We discussed the ' + linkIt(link.arac, 'Academic Regulations Appeals') + ' (ARAC) process. This option can be pursued when other policies do not apply but there is valid cause for an exception. For students with a current UAA advisor, see ' + linkIt(link.uaaAracForm, 'this page') + ' for instructions.', 
+    'If desired, follow the ' + linkIt(link.uaaAracForm, 'ARAC appeal instructions') + ' to seek an exception for <input type="text">.', 
     null, 
     null
 );
