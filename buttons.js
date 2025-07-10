@@ -141,6 +141,163 @@ var survey = new Button(
     null
 );
 
+//Intake
+var takeSurvey = new Button(
+	'intake', //type
+	'🗓️', //symbol
+	'Survey and Checklist', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	null, //output.summary
+	'Complete the ' + linkIt(link.survey, 'advising survey') + '. Review the ' + linkIt(link.checklist, 'first-year checklist') + ' for other tasks you may have missed.', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var mathRefresher = new Button(
+	'intake', //type
+	'∫', //symbol
+	'Math Refresher', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	'You need to take the Math placement test; the best way to prepare is to participate in one of the ' + linkIt(link.mathRefresher, 'Math Refresher') + ' sessions through the College of Engineering. They are one week long, and you should plan to take the ' + linkIt(link.mathPlacement, 'Math placement test') + ' within a few days of finishing.', //output.summary
+	null, //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var housingQuestion = new Button(
+	'intake', //type
+	'🏠', //symbol
+	'Housing Question', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	null, //output.summary
+	'Contact ' + linkIt(link.vcuHousingContact, 'Residential Life and Housing') + ' to get an answer to your question(s) about housing.', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var financeQuestion = new Button(
+	'intake', //type
+	'$', //symbol
+	'Finance Question', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	null, //output.summary
+	'Contact ' + linkIt(link.vcuSfsContact, 'Student Financial Services') + ' to get an answer to your question(s) about scholarships/billing/finances. You can find some basic information about billing and payments ' + linkIt(link.vcuBilling, 'here') + '.', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var diningQuestion = new Button(
+	'intake', //type
+	'🍽', //symbol
+	'Dining Question', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	null, //output.summary
+	'Contact ' + linkIt(link.vcuDiningContact, 'Dining Services') + ' to get an answer to your question(s) about dining/meal plans. You can find some basic information about dining ' + linkIt(link.vcuDiningInfo, 'here') + '.', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var phys207 = new Button(
+	'intake', //type
+	'Ω', //symbol
+	'PHYS 207', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	'You are eligible for PHYS 207, but are not able to register. You will need to complete the ' + linkIt(link.physOverride, 'Physics override form') + ' to request permission to take the class. You will need to include two section numbers and two CRNs: One pair for the lecture and one for the lab. You do not need to send any documentation; instead, email the address on the form and tell them you are an incoming freshman who is eligible but does not have credit for MATH 151.', //output.summary
+	'Complete the ' + linkIt(link.physOverride, 'Physics override form') + ' to request permission to take PHYS 207.', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var transcriptSend = new Button(
+	'intake', //type
+	'🧾', //symbol
+	'Transcripts', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	'Official transcripts should be sent to VCU electronically if the other institution allows. If only available in hard copy, they should be delivered to the Office of Admissions unopened and sealed in their original envelope (mail to: VCU Office of Admissions, Box 842526, Richmond, VA 23284-2526).', //output.summary
+	'Send an official transcript and/or AP test scores to VCU (see below). If you need overrides for any classes, email me PDFs and/or screenshots.', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var successCourse = new Button(
+	'intake', //type
+	'🌟', //symbol
+	'UNIV 191', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	'My sections of UNIV 191 are on Wednesdays at 1pm (CRN: 49916) and 2pm (49917).', //output.summary
+	null, //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var recommendedCourse = new Button(
+	'intake', //type
+	'🗓️', //symbol
+	'Course List', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	'We talked about the classes you should take this Fall. I recommend you register for the following: <textarea></textarea>', //output.summary
+	'Adjust your course registration so it matches the list below.', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var genEdDoubles = new Button(
+	'intake', //type
+	'🏫', //symbol
+	'Gen Ed Doubles', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	'To complete your ' + linkIt(link.genEds, 'ConnectED requirements') + ' efficiently, you may want/need to select a class that fulfills two requirements at once. Use this ' + linkIt(link.genEdDoubles, 'this tool') + ' to select two requirements and see which courses fulfill that pair.', //output.summary
+	'Register for a ConnectED course that fulfills these two requirements: <input type="text">', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var contactAdmissions = new Button(
+	'intake', //type
+	'🎟️', //symbol
+	'Admissions', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	null, //output.summary
+	'Contact ' + linkIt(link.contactAdmissions, 'Admissions') + ' about <input type="text">.', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var apIb = new Button(
+	'intake', //type
+	'💯', //symbol
+	'AP/IB', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	null, //output.summary
+	'When your AP/IB test scores are released, send me a screenshot including (a) your name, (b) the test name, and (c) your score so I can provide (an) override(s) as needed.', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
+var DMoC = new Button(
+	'intake', //type
+	'👨🏿', //symbol
+	'Men of Color', //label
+	null, //color
+	1, //canFade
+	0, //critical
+	'We talked about ' + linkIt(link.dmocMain, 'Developing Men of Color') + '. You can read ' + linkIt(link.dmocArticle, 'this article') + ' to learn more about the impacts of this incredible program. You can also ' + linkIt(link.dmocMeetEng, 'schedule a meeting with them') + ' to talk more about it and ask questions. They have their own sections of UNIV 191, which are as follows: <ul><li>Goode: CRN 42690   Time/ Date: 11 am-11:50/ Wed</li><li>Goode: CRN 42691   Time/Date: 3 pm-3:50/ Wed</li><li>Vinnie: CRN 46597    Time/Date: 3:30 -4:20 pm/Tues</li><li>Vinnie: CRN 43144    Time/Date: 4:00-4:50 pm/ Wed</li><li>Nick:    CRN 44804    Time/Date: 2:00 pm-2:50 pm/Tues</li></ul>', //output.summary
+	'Read up on Developing Men of Color and ' + linkIt(link.dmocMeetEng, 'schedule a meeting with them') + ' if desired.', //output.task
+	null, //output.howTo
+	null); //extraInfo
+
 // Routines
 var classAlert = new Button(
     'routine', 
@@ -434,12 +591,12 @@ var enrollmentCancellation = new Button(
 var takeCoursesElsewhere = new Button(
     'event', 
     '🌐', 
-    'Take Courses Elsewhere', 
+    'Take Courses Elsewhere',
     null, 
     1, 
     0,
-	'We talked about taking classes outside of VCU. ' + linkIt(link.takeCoursesElsewhere, 'This process') + ' will help ensure courses taken elsewhere will count properly at VCU. You will need to apply and register at the other institution (check their website and/or contact their admissions department for details). The process can take some time, so start ASAP. You can explore ' + linkIt(link.transferEquivalents, 'transfer course equivalents') + ' and ' + linkIt(link.vccs, 'VCCS course offerings') + ' online. Courses at other institutions may have prerequisites (some of which might be transferrable from VCU). FI classes cannot be transferred to VCU once any coursework is started at VCU. The course equivalents we discussed were: <input type="text">',
-    'Apply and register at the other institution where you intend to take classes. Follow ' + linkIt(link.takeCoursesElsewhere, 'this process') + ' to ensure your credits will transfer.', 
+	'We talked about taking classes outside of VCU. ' + linkIt(link.takeCoursesElsewhere, 'This process') + ' will help ensure courses taken elsewhere will count properly at VCU. You will need to apply and register at the other institution (check their website and/or contact their admissions department for details). The process can take some time, so start ASAP. You can explore ' + linkIt(link.vccs, 'VCCS course offerings') + ' online. Courses at other institutions may have prerequisites, and these may need to be transferred from VCU; some schools instead have special policies/forms for students only seeking transfer credit (look for terms like "visiting," "transient," or "non-degree"). FI classes cannot be transferred to VCU once any coursework is started at VCU. You can talk to the other institution\'s student finance office to ask about financial aid, but be prepared to pay out-of-pocket unless you have confirmation otherwise.',
+    'Apply and register at the other institution where you intend to take classes. Follow ' + linkIt(link.takeCoursesElsewhere, 'this process') + ' to ensure your credits will transfer. The course equivalents we discussed were: <input type="text">', 
     null, 
     null
 );
@@ -464,7 +621,7 @@ var nonSpringFall = new Button(
     null, 
     1, 
     0, 
-    'VCU classes can be taken during non-standard ' + linkIt(link.terms, 'terms') + ' such as ' + linkIt(link.summer, 'summer') + ', ' + linkIt(link.intersession, 'winter intersession') + ', ' + linkIt(link.jTerm, 'J-term') + ', half semesters, and ' + linkIt(link.miniterm, 'miniterm') + ' sessions. If your Intersession course would cause an overload for your Spring registration, email ' + linkIt('mailto:rar@vcu.edu', 'rar@vcu.edu') + ' to request that they manually register you. For Summer classes at VCU, register in eServices as usual (selecting Summer as the term). Please note that taking Summer classes may cost more than increasing Fall/Spring courseloads, especially if you need to ' + linkIt(link.summerHousing, 'live on campus') + '. Some classes can also be completed at community colleges over the summer.', 
+    'VCU classes can be taken during non-standard ' + linkIt(link.terms, 'terms') + ' such as ' + linkIt(link.summer, 'summer') + ', ' + linkIt(link.intersession, 'winter intersession') + ', ' + linkIt(link.jTerm, 'J-term') + ', half semesters, and ' + linkIt(link.miniterm, 'miniterm') + ' sessions. If your Intersession course would cause an overload for your Spring registration, email ' + linkIt('mailto:rar@vcu.edu', 'rar@vcu.edu') + ' to request that they manually register you. For Summer classes at VCU, register in eServices as usual (selecting Summer as the term). Please note that taking Summer classes may cost more than increasing Fall/Spring courseloads, especially if you need to ' + linkIt(link.summerHousing, 'live on campus') + '. Your specifics will vary based on what financial aid is available to you, and you should ' + linkIt(link.vcuSfsContact, 'contact Student Financial Services') + ' to get details. Some classes can also be completed at community colleges over the summer.', 
     'Explore, consider, and register for non-Fall/Spring semester classes as desired.',
     null, 
     null
@@ -491,7 +648,7 @@ var learning = new Button(
     null, 
     1, 
     0, 
-    'I recommended that you seek support from the ' + linkIt(link.learning, 'Campus Learning Center') + ', which coordinates individual ' + linkIt(link.tutoring, 'Tutoring') + ', individual ' + linkIt(link.academicCoaching, 'Academic Coaching') + ', and group ' + linkIt(link.si, 'Supplemental Instruction') + '.', 
+    'I recommended that you seek support from the ' + linkIt(link.learning, 'Campus Learning Center') + ', which coordinates individual ' + linkIt(link.tutoring, 'Tutoring') + ', individual ' + linkIt(link.academicCoaching, 'Academic Coaching') + ', and group ' + linkIt(link.pass, 'Peer Assisted Study Sessions') + '.', 
     'Plan to make use of the ' + linkIt(link.learning, 'Campus Learning Center') + ' for <input type="text">.', 
     null, 
     null
@@ -582,8 +739,8 @@ var disability = new Button(
     null, 
     1, 
     0, 
-    'I recommended that you communicate with the ' + linkIt(link.disability, 'Student Accessibility and Educational Opportunity') + ' (SAEO) office.', 
-    'Contact the ' + linkIt(link.disability, 'SAEO') + ' office about <input type="text">.', 
+    null,
+    'If desired, ' + linkIt(link.saeoIntake, 'register with') + ' the ' + linkIt(link.disability, 'Student Accessibility and Educational Opportunity') + ' (SAEO) office and communicate with them about <input type="text">.', 
     null, 
     null
 );
@@ -674,9 +831,9 @@ var withdraw = new Button(
     null, 
     1,
     0, 
-    'We discussed the ' + linkIt(link.addDropWithdraw, 'Withdraw policy') + '. There are many implications of withdrawal, and you should check with various people/offices before withdrawing. Registration requirements exist for ' + linkIt(link.dropWithdrawSFS, 'financial aid') + ', ' + linkIt(link.housing, 'housing') + ', and ' + linkIt(link.military, 'military support') + ', and you need complete information before weighing the consequences of withdrawal against the adverse effects of low grades. Withdrawals count as unsuccessfully attempted courses for the purposes of ' + linkIt(link.sap, 'SAP') + '. They also increase your workload for future semesters (compared to successful completion). Withdrawal happens via the registration system in ' + linkIt(link.eServices, 'eServices') + '. If you need to withdraw and have a hold on your account, ' + linkIt('mailto:rar@vcu.ed', 'email the registrar') + ' (rar@vcu.ed) and provide your situation, name, V number, course code, and CRN.', 
+    'We discussed the ' + linkIt(link.addDropWithdraw, 'Withdraw policy') + '. There are many implications of withdrawal, and you should check with various people/offices before withdrawing. Registration requirements exist for ' + linkIt(link.dropWithdrawSFS, 'financial aid') + ', ' + linkIt(link.housing, 'housing') + ', and ' + linkIt(link.military, 'military support') + ', and you need complete information before weighing the consequences of withdrawal against the adverse effects of low grades. Withdrawals count as unsuccessfully attempted courses for the purposes of ' + linkIt(link.sap, 'SAP') + '. They also increase your workload for future semesters (compared to successful completion).', 
     'Discuss the implications of withdrawal with all relevant people/offices (see details below). ' + linkIt(link.withdrawHowTo, 'Withdraw') + ' from <input type="text"> if desired.',
-    null, 
+    '<b>Withdraw</b> from a class: Access the registration system in ' + linkIt(link.eServices, 'eServices') + ' and follow normal procedures for adding/dropping, but look for "Withdraw." See ' + linkIt(link.howToADW, 'this page') + ' for details. If you need to withdraw and have a hold on your account, ' + linkIt('mailto:rar@vcu.ed', 'email the registrar') + ' (rar@vcu.ed) and provide your situation, name, V number, course code, and CRN.', 
     null
 );
 
@@ -832,7 +989,7 @@ var mathAleks = new Button(
     1, 
     0, 
     'I recommend you make use of the ' + linkIt(link.mathAleks, 'ALEKS process for Math') + '. Additional prerequisite MATH courses may increase the cost of your degree. Students in the College of Engineering can <b>skip the next level</b> and attempt to earn a placement <b>two levels</b> above the earned placement. After raising your placement score, you need to report it using ' + linkIt(link.mathAleksReport, 'this form') + '.', 
-    'As needed, take the ' + linkIt(link.mathPlacement, 'MATH placement test') + ' and complete ' + linkIt(link.mathAleks, 'modules') + ' for <input type="text">. When done, complete ' + linkIt(link.mathAleksReport, 'this form') + '.', 
+    'As needed, take the ' + linkIt(link.mathPlacement, 'MATH placement test') + ' and complete ' + linkIt(link.mathAleks, 'modules') + ' for <input type="text">. When done, complete ' + linkIt(link.mathAleksReport, 'this form') + ' and register when able.', 
     null, 
     null
 );
@@ -948,7 +1105,7 @@ var engStudentOrgs = new Button(
     null, 
     1, 
     0, 
-    'There are many ' + linkIt(link.engStudentOrgs, 'engineering student organizations') + ' on campus in which you may enjoy and benefit from paricipation. Participation in and leadership of student organizations are great additions to your résumé.',
+    'There are many ' + linkIt(link.engStudentOrgs, 'engineering student organizations') + ' on campus in which you may enjoy and benefit from participation. Participation in and leadership of student organizations are great additions to your résumé.',
 	null,
     null,
     null

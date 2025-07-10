@@ -47,6 +47,8 @@ var link = {
 	
 	cbapScoreSend: 'https://apstudents.collegeboard.org/sending-scores',
 	
+	howToADW: 'https://registrar.vcu.edu/registration/registration-guide/add-drop-or-withdraw/',
+	
 	
 	terms: "https://registrar.vcu.edu/academic-schedules/schedule-of-classes/",
 	miniterm: 'https://registrar.vcu.edu/registration/registration-guide/spring-miniterms/',
@@ -89,12 +91,13 @@ var link = {
 	military: 'https://militaryservices.vcu.edu/',
 	transfer: 'https://transfer.vcu.edu/',
 	disability: 'https://saeo.vcu.edu/',
+	saeoIntake: 'https://sanford.accessiblelearning.com/VCU/Start.aspx?Type=SAP&TID=tUpcdlMlHtbQvAUjkPkdiMAgfyzYGjZmxYcMZFtKxh',
 	counseling: 'https://counseling.vcu.edu/',
 	dosa: 'https://dos.vcu.edu/',
 	advocacy: 'https://advocacy.vcu.edu/',
 	learning: 'https://clc.vcu.edu/',
 	tutoring: 'https://clc.vcu.edu/tutoring/',
-	si: 'https://clc.vcu.edu/supplemental-instruction/',
+	pass: 'https://clc.vcu.edu/supplemental-instruction/',
 	academicCoaching: 'https://clc.vcu.edu/academic-coaching/',
 	
 	global: 'https://global.vcu.edu/',
@@ -109,6 +112,21 @@ var link = {
 
 	//Holds
 	immunization: 'https://health.students.vcu.edu/immunizations/submitting-immunization-records/',
+	
+	//Summer
+	mathRefresher: 'https://math.vcu.edu/programs/undergraduate/courses/math-placement/math-refresher/',
+	vcuHousingContact: 'https://housing.vcu.edu/contact/',
+	vcuSfsContact: 'https://sfs.vcu.edu/about/contact-us/',
+	vcuBilling: 'https://sfs.vcu.edu/billing-and-payments/',
+	vcuDiningInfo: 'https://bsv.vcu.edu/dining/',
+	vcuDiningContact: 'https://bsv.vcu.edu/dining/',
+	survey: 'https://vcuportal.questionpro.com/FY25Fall',
+	checklist: 'https://admissions.vcu.edu/accepted-students/first-year-checklist/',
+	genEdDoubles: 'https://script.google.com/a/macros/vcu.edu/s/AKfycbxzCD8vJ9ffCpBEqVe_Foacen372mNJj4UjKcyw3N4AeXTGQbXDv08Wnd32_66xTHuS/exec',
+	dmocMain: 'https://www.dmcvcu.com/',
+	dmocMeetEng: 'https://calendly.com/ziadkashef/carrerprepdmc?month=2025-04',
+	dmocArticle: 'https://news.vcu.edu/article/2022/10/how-vcus-men-of-color-initiative-is-working-with-black-and-latino-male-students',
+	contactAdmissions: 'https://admissions.vcu.edu/connect/contact-admissions/',
 }
 
 function linkIt(link, text) {
