@@ -37,6 +37,7 @@ var link = {
 	timelyCare: 'https://counseling.vcu.edu/students/timelycare/',
 	collegeScheduler: 'https://vcu.collegescheduler.com/entry',
 	clep: 'https://transfer.vcu.edu/transferring-credits/clep-credits/',
+	takeCLEP: 'https://clc.vcu.edu/testing-center/clep-exams/',
 	modernStates: 'https://modernstates.org/faq/#clepvoucherprogram',
 	careerServices: 'https://careers.vcu.edu/',
 	
@@ -127,6 +128,9 @@ var link = {
 	dmocMeetEng: 'https://calendly.com/ziadkashef/carrerprepdmc?month=2025-04',
 	dmocArticle: 'https://news.vcu.edu/article/2022/10/how-vcus-men-of-color-initiative-is-working-with-black-and-latino-male-students',
 	contactAdmissions: 'https://admissions.vcu.edu/connect/contact-admissions/',
+	
+	khanPrecalc: 'https://www.khanacademy.org/math/precalculus',
+	khanAlgebra: 'https://www.khanacademy.org/math/college-algebra',
 }
 
 function linkIt(link, text) {

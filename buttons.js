@@ -595,7 +595,7 @@ var takeCoursesElsewhere = new Button(
     null, 
     1, 
     0,
-	'We talked about taking classes outside of VCU. ' + linkIt(link.takeCoursesElsewhere, 'This process') + ' will help ensure courses taken elsewhere will count properly at VCU. You will need to apply and register at the other institution (check their website and/or contact their admissions department for details). The process can take some time, so start ASAP. You can explore ' + linkIt(link.vccs, 'VCCS course offerings') + ' online. Courses at other institutions may have prerequisites, and these may need to be transferred from VCU; some schools instead have special policies/forms for students only seeking transfer credit (look for terms like "visiting," "transient," or "non-degree"). FI classes cannot be transferred to VCU once any coursework is started at VCU. You can talk to the other institution\'s student finance office to ask about financial aid, but be prepared to pay out-of-pocket unless you have confirmation otherwise.',
+	'We talked about taking classes outside of VCU. ' + linkIt(link.takeCoursesElsewhere, 'This process') + ' will help ensure courses taken elsewhere will ' + linkIt(link.transferEquivalents, 'count properly at VCU') + '. You will need to apply and register at the other institution (check their website and/or contact their admissions department for details). The process can take some time, so start ASAP. You can explore ' + linkIt(link.vccs, 'VCCS course offerings') + ' online. Courses at other institutions may have prerequisites, and these may need to be transferred from VCU; some schools instead have special policies/forms for students only seeking transfer credit (look for terms like "visiting," "transient," or "non-degree"). FI classes cannot be transferred to VCU once any coursework is started at VCU. You can talk to the other institution\'s student finance office to ask about financial aid, but be prepared to pay out-of-pocket unless you have confirmation otherwise. You must complete at least 25% of you credits at VCU, including at least 30 of the last 45 credits.',
     'Apply and register at the other institution where you intend to take classes. Follow ' + linkIt(link.takeCoursesElsewhere, 'this process') + ' to ensure your credits will transfer. The course equivalents we discussed were: <input type="text">', 
     null, 
     null
@@ -941,15 +941,15 @@ var courseEvaluation = new Button(
     null
 );
 
-var alternativeCredit = new Button(
+var clep = new Button(
     'event', 
     '📚', 
-    'Add. Credit Sources',
+    'CLEP',
     null, 
     1, 
     0, 
-    'We discussed ' + linkIt(link.alternativeCredit, 'additional sources of academic credit') + ' such as ' + linkIt(link.clep, 'CLEP exams') + ' (with support from ' + linkIt(link.modernStates, 'Modern States') + ') and ' + linkIt(link.transferEquivalents, 'transfer') + ' credit from other institutions. You must complete at least 25% of you credits at VCU, including at least 30 of the last 45 credits.', 
-    null,
+    'We discussed ' + linkIt(link.alternativeCredit, 'additional sources of academic credit') + ' such as ' + linkIt(link.clep, 'CLEP exams') + ' (with support from ' + linkIt(link.modernStates, 'Modern States') + '). You must complete at least 25% of you credits at VCU, including at least 30 of the last 45 credits.', 
+    'If desired, ' + linkIt(link.takeCLEP, 'take the CLEP test') + ' for <input type="text">.',
     null,
     null
 );
@@ -988,8 +988,8 @@ var mathAleks = new Button(
     null, 
     1, 
     0, 
-    'I recommend you make use of the ' + linkIt(link.mathAleks, 'ALEKS process for Math') + '. Additional prerequisite MATH courses may increase the cost of your degree. Students in the College of Engineering can <b>skip the next level</b> and attempt to earn a placement <b>two levels</b> above the earned placement. After raising your placement score, you need to report it using ' + linkIt(link.mathAleksReport, 'this form') + '.', 
-    'As needed, take the ' + linkIt(link.mathPlacement, 'MATH placement test') + ' and complete ' + linkIt(link.mathAleks, 'modules') + ' for <input type="text">. When done, complete ' + linkIt(link.mathAleksReport, 'this form') + ' and register when able.', 
+    'I recommend you make use of the ' + linkIt(link.mathAleks, 'ALEKS process for Math') + '. Additional prerequisite MATH courses may increase the cost of your degree. You may want to prepare for the test using Khan Academy units for ' + linkIt(link.khanAlgebra, 'College Algebra') + ' and ' + linkIt(link.khanPrecalc, 'Precalculus') + '. Students in the College of Engineering can <b>skip the next level</b> and attempt to earn a placement <b>two levels</b> above the earned placement. After raising your placement score, you need to report it using ' + linkIt(link.mathAleksReport, 'this form') + '.', 
+    'Take the ' + linkIt(link.mathPlacement, 'MATH placement test') + ' and complete the ' + linkIt(link.mathAleks, 'ALEKS modules') + ' for <input type="text"> if needed. When done, complete ' + linkIt(link.mathAleksReport, 'this form') + '.', 
     null, 
     null
 );
